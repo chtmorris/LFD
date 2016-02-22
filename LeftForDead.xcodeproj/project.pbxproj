@@ -14,6 +14,7 @@
 		ECACC88E1C7AB7CC0061D95D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECACC88C1C7AB7CC0061D95D /* LaunchScreen.storyboard */; };
 		ECACC8991C7AB7CD0061D95D /* LeftForDeadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8981C7AB7CD0061D95D /* LeftForDeadTests.swift */; };
 		ECACC8A41C7AB7CD0061D95D /* LeftForDeadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8A31C7AB7CD0061D95D /* LeftForDeadUITests.swift */; };
+		ECACC8B21C7ABC780061D95D /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8B11C7ABC780061D95D /* StateMachine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		ECACC89F1C7AB7CD0061D95D /* LeftForDeadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeftForDeadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECACC8A31C7AB7CD0061D95D /* LeftForDeadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftForDeadUITests.swift; sourceTree = "<group>"; };
 		ECACC8A51C7AB7CD0061D95D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECACC8B11C7ABC780061D95D /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				ECACC8831C7AB7CC0061D95D /* AppDelegate.swift */,
 				ECACC8851C7AB7CC0061D95D /* ViewController.swift */,
 				ECACC8871C7AB7CC0061D95D /* Main.storyboard */,
+				ECACC8B11C7ABC780061D95D /* StateMachine.swift */,
 				ECACC88A1C7AB7CC0061D95D /* Assets.xcassets */,
 				ECACC88C1C7AB7CC0061D95D /* LaunchScreen.storyboard */,
 				ECACC88F1C7AB7CC0061D95D /* Info.plist */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECACC8861C7AB7CC0061D95D /* ViewController.swift in Sources */,
+				ECACC8B21C7ABC780061D95D /* StateMachine.swift in Sources */,
 				ECACC8841C7AB7CC0061D95D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
