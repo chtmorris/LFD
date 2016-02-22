@@ -10,13 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, StateMachineDelegateProtocol {
     
-    private var machine:StateMachine<ViewController>!
+    var machine:StateMachine<ViewController>!
     
     enum StoryState{
         case Beginning, Ch1RouteA, Ch1RouteB, Ch1RouteAA, Ch1RouteAB, Ch1RouteBA, Ch1RouteBB
     }
+
     
-    init(){
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
         machine = StateMachine(initialState: .Beginning, delegate: self)
     }
 
@@ -77,8 +79,41 @@ class ViewController: UIViewController, StateMachineDelegateProtocol {
     }
     
     
-    @IBAction func choice1tapped(sender: AnyObject) {
+    @IBAction func choice1tapped(sender: UIButton) {
         machine.state = .Ch1RouteA
+        print("Ch1RouteA")
+    }
+    
+    @IBAction func choice2tapped(sender: UIButton) {
+        machine.state = .Ch1RouteB
+        print("Ch1RouteB")
+    }
+    
+    @IBAction func choice3tapped(sender: UIButton) {
+        if machine.state == .Ch1RouteA {
+            machine.state = .Ch1RouteAA
+            print("Ch1RouteAA")
+        } else {
+            machine.state = .Ch1RouteBA
+            print("Ch1RouteAB")
+        }
+    }
+    
+    @IBAction func choice4tapped(sender: UIButton) {
+        if machine.state == .Ch1RouteA {
+            machine.state = .Ch1RouteAB
+            print("Ch1RouteBA")
+        } else {
+            machine.state = .Ch1RouteBB
+            print("Ch1RouteBB")
+        }
+    }
+    
+    @IBAction func resetButtonTapped(sender: UIButton) {
+        machine.state = .Beginning
+        secondStoryLine.text = "Reset"
+        thirdStoryLine.text = "Reset"
+        print(machine.state)
     }
     
 }

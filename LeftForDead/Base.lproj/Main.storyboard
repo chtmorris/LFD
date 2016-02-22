@@ -45,14 +45,30 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYc-8S-urC">
                                 <rect key="frame" x="350" y="124" width="61" height="30"/>
                                 <state key="normal" title="Choice 2"/>
+                                <connections>
+                                    <action selector="choice2tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXz-p9-1uh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhR-23-rOm">
                                 <rect key="frame" x="187" y="261" width="59" height="30"/>
                                 <state key="normal" title="Choice 1"/>
+                                <connections>
+                                    <action selector="choice3tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W2g-4R-xsR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0Y-B6-9eE">
                                 <rect key="frame" x="351" y="261" width="61" height="30"/>
                                 <state key="normal" title="Choice 2"/>
+                                <connections>
+                                    <action selector="choice4tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYz-Cz-P2A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mn-eJ-fIo">
+                                <rect key="frame" x="281" y="406" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3rP-EP-lAO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -69,6 +85,8 @@
                             <constraint firstItem="zYc-8S-urC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="124" id="dI6-ft-JzT"/>
                             <constraint firstItem="4eS-bs-c0w" firstAttribute="top" secondItem="tw3-Of-sLr" secondAttribute="bottom" constant="110" id="dvD-8z-3HI"/>
                             <constraint firstAttribute="trailing" secondItem="n0Y-B6-9eE" secondAttribute="trailing" constant="188" id="hD7-2N-58N"/>
+                            <constraint firstItem="4mn-eJ-fIo" firstAttribute="top" secondItem="K7g-ue-7EH" secondAttribute="bottom" constant="57" id="iqc-Hc-7Ix"/>
+                            <constraint firstItem="4mn-eJ-fIo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lpE-jm-y6f"/>
                             <constraint firstItem="n0Y-B6-9eE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="261" id="o1G-Tc-WfC"/>
                             <constraint firstItem="tw3-Of-sLr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="py7-77-LHA"/>
                             <constraint firstItem="haU-AE-T0e" firstAttribute="top" secondItem="tw3-Of-sLr" secondAttribute="bottom" constant="41" id="rrf-yi-18k"/>

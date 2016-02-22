@@ -100,9 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				ECACC8831C7AB7CC0061D95D /* AppDelegate.swift */,
-				ECACC8851C7AB7CC0061D95D /* ViewController.swift */,
+				ECACC8B31C7AED940061D95D /* StateMachine */,
+				ECACC8B41C7AEDAE0061D95D /* ViewControllers */,
 				ECACC8871C7AB7CC0061D95D /* Main.storyboard */,
-				ECACC8B11C7ABC780061D95D /* StateMachine.swift */,
 				ECACC88A1C7AB7CC0061D95D /* Assets.xcassets */,
 				ECACC88C1C7AB7CC0061D95D /* LaunchScreen.storyboard */,
 				ECACC88F1C7AB7CC0061D95D /* Info.plist */,
@@ -126,6 +126,22 @@
 				ECACC8A51C7AB7CD0061D95D /* Info.plist */,
 			);
 			path = LeftForDeadUITests;
+			sourceTree = "<group>";
+		};
+		ECACC8B31C7AED940061D95D /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				ECACC8B11C7ABC780061D95D /* StateMachine.swift */,
+			);
+			name = StateMachine;
+			sourceTree = "<group>";
+		};
+		ECACC8B41C7AEDAE0061D95D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ECACC8851C7AB7CC0061D95D /* ViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
