@@ -36,41 +36,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhR-23-rOm">
-                                <rect key="frame" x="183" y="336" width="59" height="30"/>
-                                <state key="normal" title="Choice 1"/>
+                                <rect key="frame" x="182" y="536" width="62" height="30"/>
+                                <state key="normal" title="Choice A"/>
                                 <connections>
-                                    <action selector="choice3tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W2g-4R-xsR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mn-eJ-fIo">
-                                <rect key="frame" x="281" y="406" width="39" height="30"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3rP-EP-lAO"/>
+                                    <action selector="choiceAtapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gVi-BB-9On"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0Y-B6-9eE">
-                                <rect key="frame" x="351" y="336" width="61" height="30"/>
-                                <state key="normal" title="Choice 2"/>
+                                <rect key="frame" x="356" y="536" width="62" height="30"/>
+                                <state key="normal" title="Choice B"/>
                                 <connections>
-                                    <action selector="choice4tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYz-Cz-P2A"/>
+                                    <action selector="choiceBtapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ep-v6-Ki4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="K7g-ue-7EH" firstAttribute="top" secondItem="4eS-bs-c0w" secondAttribute="bottom" constant="82" id="1RG-Lr-ql4"/>
-                            <constraint firstItem="4eS-bs-c0w" firstAttribute="top" secondItem="tw3-Of-sLr" secondAttribute="bottom" constant="84" id="1dk-lz-6u4"/>
-                            <constraint firstItem="K7g-ue-7EH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3GU-4K-lXE"/>
-                            <constraint firstItem="4eS-bs-c0w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9oU-6c-HTB"/>
-                            <constraint firstItem="n0Y-B6-9eE" firstAttribute="top" secondItem="K7g-ue-7EH" secondAttribute="bottom" constant="46.5" id="BRk-Bj-iwc"/>
-                            <constraint firstItem="tw3-Of-sLr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="QFi-m5-Ob6"/>
-                            <constraint firstItem="4mn-eJ-fIo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b2P-NQ-FLu"/>
-                            <constraint firstItem="fhR-23-rOm" firstAttribute="top" secondItem="K7g-ue-7EH" secondAttribute="bottom" constant="46.5" id="cZI-mH-RQX"/>
-                            <constraint firstItem="4mn-eJ-fIo" firstAttribute="top" secondItem="K7g-ue-7EH" secondAttribute="bottom" constant="116.5" id="iha-Rb-7UZ"/>
-                            <constraint firstItem="fhR-23-rOm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-87.5" id="map-4x-eZN"/>
-                            <constraint firstItem="n0Y-B6-9eE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="81.5" id="qzc-4h-1Ew"/>
-                            <constraint firstItem="tw3-Of-sLr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wCn-BG-qpR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fhR-23-rOm" secondAttribute="bottom" constant="34" id="40q-cs-RK4"/>
+                            <constraint firstItem="tw3-Of-sLr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="5vg-ed-HRi"/>
+                            <constraint firstItem="K7g-ue-7EH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Tf-j1-lSf"/>
+                            <constraint firstItem="K7g-ue-7EH" firstAttribute="top" secondItem="4eS-bs-c0w" secondAttribute="bottom" constant="82.5" id="ASl-J7-8M4"/>
+                            <constraint firstItem="4eS-bs-c0w" firstAttribute="top" secondItem="tw3-Of-sLr" secondAttribute="bottom" constant="83.5" id="WHl-36-RgP"/>
+                            <constraint firstItem="n0Y-B6-9eE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="87" id="dEW-PE-ICG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n0Y-B6-9eE" secondAttribute="bottom" constant="34" id="dkc-0y-jTD"/>
+                            <constraint firstItem="fhR-23-rOm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-87" id="pDP-4j-QYH"/>
+                            <constraint firstItem="4eS-bs-c0w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q3g-9x-0j2"/>
+                            <constraint firstItem="tw3-Of-sLr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tv1-K6-bvm"/>
                         </constraints>
                     </view>
                     <connections>

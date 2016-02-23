@@ -44,7 +44,7 @@ class LFDMainVC: UIViewController {
     }
 
     
-    @IBAction func choice3tapped(sender: UIButton) {
+    @IBAction func choiceAtapped(sender: UIButton) {
         switch machine.state {
         case .Beginning:
             machine.state = .Ch1RouteA
@@ -57,7 +57,7 @@ class LFDMainVC: UIViewController {
         }
     }
     
-    @IBAction func choice4tapped(sender: UIButton) {
+    @IBAction func choiceBtapped(sender: UIButton) {
         switch machine.state {
         case .Beginning:
             machine.state = .Ch1RouteB
@@ -68,13 +68,6 @@ class LFDMainVC: UIViewController {
         default:
             print("Unknown action where state is \(machine.state)")
         }
-    }
-    
-    @IBAction func resetButtonTapped(sender: UIButton) {
-        machine.state = .Beginning
-        secondStoryLine.text = "Reset"
-        thirdStoryLine.text = "Reset"
-        print(machine.state)
     }
     
 }
