@@ -90,22 +90,24 @@ class ViewController: UIViewController, StateMachineDelegateProtocol {
     }
     
     @IBAction func choice3tapped(sender: UIButton) {
-        if machine.state == .Ch1RouteA {
+        switch machine.state {
+        case .Ch1RouteA:
             machine.state = .Ch1RouteAA
-            print("Ch1RouteAA")
-        } else {
+        case .Ch1RouteB:
             machine.state = .Ch1RouteBA
-            print("Ch1RouteAB")
+        default:
+            print("Unknown action where state is \(machine.state)")
         }
     }
     
     @IBAction func choice4tapped(sender: UIButton) {
-        if machine.state == .Ch1RouteA {
+        switch machine.state {
+        case .Ch1RouteA:
             machine.state = .Ch1RouteAB
-            print("Ch1RouteBA")
-        } else {
+        case .Ch1RouteB:
             machine.state = .Ch1RouteBB
-            print("Ch1RouteBB")
+        default:
+            print("Unknown action where state is \(machine.state)")
         }
     }
     
