@@ -16,6 +16,7 @@
 		ECACC8A41C7AB7CD0061D95D /* LeftForDeadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8A31C7AB7CD0061D95D /* LeftForDeadUITests.swift */; };
 		ECACC8B21C7ABC780061D95D /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8B11C7ABC780061D95D /* StateMachine.swift */; };
 		ECACC8B61C7C05EE0061D95D /* LFDMainVC+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8B51C7C05EE0061D95D /* LFDMainVC+Transitions.swift */; };
+		ECACC8B91C7C07200061D95D /* LFDStoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8B81C7C07200061D95D /* LFDStoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		ECACC8A51C7AB7CD0061D95D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECACC8B11C7ABC780061D95D /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		ECACC8B51C7C05EE0061D95D /* LFDMainVC+Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LFDMainVC+Transitions.swift"; sourceTree = "<group>"; };
+		ECACC8B81C7C07200061D95D /* LFDStoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDStoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				ECACC8831C7AB7CC0061D95D /* AppDelegate.swift */,
 				ECACC8B31C7AED940061D95D /* StateMachine */,
+				ECACC8B71C7C06FB0061D95D /* StoryModel */,
 				ECACC8B41C7AEDAE0061D95D /* ViewControllers */,
 				ECACC8871C7AB7CC0061D95D /* Main.storyboard */,
 				ECACC88A1C7AB7CC0061D95D /* Assets.xcassets */,
@@ -145,6 +148,14 @@
 				ECACC8B51C7C05EE0061D95D /* LFDMainVC+Transitions.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ECACC8B71C7C06FB0061D95D /* StoryModel */ = {
+			isa = PBXGroup;
+			children = (
+				ECACC8B81C7C07200061D95D /* LFDStoryModel.swift */,
+			);
+			name = StoryModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +291,7 @@
 			files = (
 				ECACC8861C7AB7CC0061D95D /* LFDMainVC.swift in Sources */,
 				ECACC8B21C7ABC780061D95D /* StateMachine.swift in Sources */,
+				ECACC8B91C7C07200061D95D /* LFDStoryModel.swift in Sources */,
 				ECACC8841C7AB7CC0061D95D /* AppDelegate.swift in Sources */,
 				ECACC8B61C7C05EE0061D95D /* LFDMainVC+Transitions.swift in Sources */,
 			);
@@ -506,6 +518,7 @@
 				ECACC8AA1C7AB7CD0061D95D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECACC8AB1C7AB7CD0061D95D /* Build configuration list for PBXNativeTarget "LeftForDeadTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +527,7 @@
 				ECACC8AD1C7AB7CD0061D95D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECACC8AE1C7AB7CD0061D95D /* Build configuration list for PBXNativeTarget "LeftForDeadUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +536,7 @@
 				ECACC8B01C7AB7CD0061D95D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
