@@ -78,19 +78,10 @@ class ViewController: UIViewController, StateMachineDelegateProtocol {
         }
     }
     
-    
-    @IBAction func choice1tapped(sender: UIButton) {
-        machine.state = .Ch1RouteA
-        print("Ch1RouteA")
-    }
-    
-    @IBAction func choice2tapped(sender: UIButton) {
-        machine.state = .Ch1RouteB
-        print("Ch1RouteB")
-    }
-    
     @IBAction func choice3tapped(sender: UIButton) {
         switch machine.state {
+        case .Beginning:
+            machine.state = .Ch1RouteA
         case .Ch1RouteA:
             machine.state = .Ch1RouteAA
         case .Ch1RouteB:
@@ -102,6 +93,8 @@ class ViewController: UIViewController, StateMachineDelegateProtocol {
     
     @IBAction func choice4tapped(sender: UIButton) {
         switch machine.state {
+        case .Beginning:
+            machine.state = .Ch1RouteB
         case .Ch1RouteA:
             machine.state = .Ch1RouteAB
         case .Ch1RouteB:
