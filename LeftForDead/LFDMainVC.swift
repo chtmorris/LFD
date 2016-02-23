@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, StateMachineDelegateProtocol {
+class LFDMainVC: UIViewController {
     
-    var machine:StateMachine<ViewController>!
+    private var machine:StateMachine<LFDMainVC>!
     
     enum StoryState{
         case Beginning, Ch1RouteA, Ch1RouteB, Ch1RouteAA, Ch1RouteAB, Ch1RouteBA, Ch1RouteBB
@@ -19,10 +19,15 @@ class ViewController: UIViewController, StateMachineDelegateProtocol {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        machine = StateMachine(initialState: .Beginning, delegate: self)
-    }
+        
+        let tx = [
+            StoryState.Beginning: [StoryState.Ch1RouteA, StoryState.Ch1RouteB],
+            StoryState.Ch1RouteA: [StoryState.Ch1RouteAA, StoryState.Ch1RouteAB],
+            StoryState.Ch1RouteB: [StoryState.Ch1RouteBA, StoryState.Ch1RouteBB]
+        ]
 
-    typealias StateType = StoryState
+        machine = StateMachine(initialState: .Beginning, delegate: self, validTransitions: tx)
+    }
     
     
     @IBOutlet weak var secondStoryLine: UILabel!
@@ -39,44 +44,6 @@ class ViewController: UIViewController, StateMachineDelegateProtocol {
         // Dispose of any resources that can be recreated.
     }
 
-    
-    func shouldTransitionFrom(from: StateType, to: StateType) -> Bool {
-        switch (from, to) {
-        case (.Beginning, .Ch1RouteA):
-            return true
-        case (.Beginning, .Ch1RouteB):
-            return true
-        case (.Ch1RouteA, .Ch1RouteAA):
-            return true
-        case (.Ch1RouteA, .Ch1RouteAB):
-            return true
-        case (.Ch1RouteB, .Ch1RouteBA):
-            return true
-        case (.Ch1RouteB, .Ch1RouteBB):
-            return true
-        default:
-            return false
-        }
-    }
-    
-    func didTransitionFrom(from: StateType, to: StateType) {
-        switch (from, to) {
-        case (.Beginning, .Ch1RouteA):
-            secondStoryLine.text = "Choice 1 selected"
-        case (.Beginning, .Ch1RouteB):
-            secondStoryLine.text = "Choice 2 selected"
-        case (.Ch1RouteA, .Ch1RouteAA):
-            thirdStoryLine.text = "Choice 1 then 1 selected"
-        case (.Ch1RouteA, .Ch1RouteAB):
-            thirdStoryLine.text = "Choice 1 then 2 selected"
-        case (.Ch1RouteB, .Ch1RouteBA):
-            thirdStoryLine.text = "Choice 2 then 1 selected"
-        case (.Ch1RouteB, .Ch1RouteBB):
-            thirdStoryLine.text = "Choice 2 then 2 selected"
-        default:
-            break
-        }
-    }
     
     @IBAction func choice3tapped(sender: UIButton) {
         switch machine.state {
@@ -109,6 +76,32 @@ class ViewController: UIViewController, StateMachineDelegateProtocol {
         secondStoryLine.text = "Reset"
         thirdStoryLine.text = "Reset"
         print(machine.state)
+    }
+    
+}
+
+
+extension LFDMainVC: StateMachineDelegateProtocol {
+    
+    typealias StateType = StoryState
+    
+    func didTransitionFrom(from: StateType, to: StateType) {
+        switch (from, to) {
+        case (.Beginning, .Ch1RouteA):
+            secondStoryLine.text = "Choice 1 selected"
+        case (.Beginning, .Ch1RouteB):
+            secondStoryLine.text = "Choice 2 selected"
+        case (.Ch1RouteA, .Ch1RouteAA):
+            thirdStoryLine.text = "Choice 1 then 1 selected"
+        case (.Ch1RouteA, .Ch1RouteAB):
+            thirdStoryLine.text = "Choice 1 then 2 selected"
+        case (.Ch1RouteB, .Ch1RouteBA):
+            thirdStoryLine.text = "Choice 2 then 1 selected"
+        case (.Ch1RouteB, .Ch1RouteBB):
+            thirdStoryLine.text = "Choice 2 then 2 selected"
+        default:
+            break
+        }
     }
     
 }
