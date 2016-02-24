@@ -40,37 +40,34 @@ extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, U
     func didTransitionFrom(from: StateType, to: StateType) {
         switch (from, to) {
         case (.Beginning, .Ch1RouteA):
-//            setStoryAndButtonText(Story.Ch1RouteA.storyText, chapter: 1, buttonAText: Story.Ch1RouteA.buttonATitle, buttonBText: Story.Ch1RouteA.buttonBTitle)
-            updateCollectionView(Story.Ch1RouteA.storyText, chapter: 1)
-//            choiceAButtonLabel.titleLabel?.text = Story.Ch1RouteA.buttonATitle
-//            choiceBButtonLabel.titleLabel?.text = Story.Ch1RouteA.buttonBTitle
+           setStoryAndButtonText(Story.Ch1RouteA)
         case (.Beginning, .Ch1RouteB):
-            updateCollectionView(Story.Ch1RouteB.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteB)
         
         case (.Ch1RouteA, .Ch1RouteAA):
-            updateCollectionView(Story.Ch1RouteAA.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteAA)
         case (.Ch1RouteAA, .Ch1RouteAAA):
-            updateCollectionView(Story.Ch1RouteAAA.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteAAA)
         case (.Ch1RouteAA, .Ch1RouteAAB):
-            updateCollectionView(Story.Ch1RouteAAB.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteAAB)
         case (.Ch1RouteAAA, .Ch1RouteB):
-            updateCollectionView(Story.Ch1RouteB.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteB)
         case (.Ch1RouteAAB, .Ch1RouteB):
-            updateCollectionView(Story.Ch1RouteB.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteB)
         case (.Ch1RouteA, .Ch1RouteAB):
-            updateCollectionView(Story.Ch1RouteAB.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteAB)
         case (.Ch1RouteAB, .Ch1RouteB):
-            updateCollectionView(Story.Ch1RouteB.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteB)
         
         case (.Ch1RouteB, .Ch1RouteBA):
-            updateCollectionView(Story.Ch1RouteBA.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteBA)
         case (.Ch1RouteBA, .Ch1RouteBAA):
-            updateCollectionView(Story.Ch1RouteBAA.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteBAA)
         case (.Ch1RouteBA, .Ch1RouteBAB):
-            updateCollectionView(Story.Ch1RouteBAB.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteBAB)
 
         case (.Ch1RouteB, .Ch1RouteBB):
-            updateCollectionView(Story.Ch1RouteAB.storyText, chapter: 1)
+            setStoryAndButtonText(Story.Ch1RouteBB)
         default:
             break
         }
@@ -81,19 +78,18 @@ extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, U
     // HELPERS
     // =======
     
-    func updateCollectionView(storyText:String, chapter:Int) {
-        myStory.append(MyStory(storyText: storyText, chapter: 1))
+    func updateCollectionView(storyText:String) {
+        myStory.append(MyStory(storyText: storyText))
         let indexPath = NSIndexPath(forItem: myStory.count - 1, inSection: 0)
         collectionView.insertItemsAtIndexPaths([indexPath])
         collectionView.reloadData()
         collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
     }
-    
-    func setStoryAndButtonText(storyText:String, chapter:Int, buttonAText:String, buttonBText:String) {
-        updateCollectionView(storyText, chapter: chapter)
-        choiceAButtonLabel.titleLabel?.text = buttonAText
-        choiceBButtonLabel.titleLabel?.text = buttonBText
+
+    func setStoryAndButtonText(storyRoute:Story) {
+        updateCollectionView(storyRoute.storyText)
+        choiceAButtonLabel.text = storyRoute.buttonATitle
+        choiceBButtonLabel.text = storyRoute.buttonBTitle
     }
-    
     
 }

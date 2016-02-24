@@ -10,10 +10,8 @@ import Foundation
 
 class MyStory {
     var storyText:String?
-    var chapter:Int?
     
-    init(storyText: String, chapter: Int) {
+    init(storyText: String) {
         self.storyText = storyText
-        self.chapter = chapter
     }
 }
