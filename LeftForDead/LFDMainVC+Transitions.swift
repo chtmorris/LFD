@@ -77,21 +77,9 @@ extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, U
     // =======
     // HELPERS
     // =======
-    
-    func updateCollectionView(storyText:Story) {
-        feedStorySentencesWithDelay(storyText)
-        
-//        myStory.append(String(MyStory(storyText: storyText)))
-//        
-//        let indexPath = NSIndexPath(forItem: myStory.count - 1, inSection: 0)
-//        collectionView.insertItemsAtIndexPaths([indexPath])
-//        collectionView.reloadData()
-//        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
-    }
 
     func setStoryAndButtonText(storyRoute:Story) {
         feedStorySentencesWithDelay(storyRoute)
-//        updateCollectionView(storyRoute.storyText[0])
         choiceAButtonLabel.text = storyRoute.buttonATitle
         choiceBButtonLabel.text = storyRoute.buttonBTitle
     }
