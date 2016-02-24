@@ -21,13 +21,13 @@ extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, U
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StoryTextCell", forIndexPath: indexPath)
         if let cell = cell as? LFDStoryTextCell {
-            cell.configure(myStory[indexPath.row].storyText!)
+            cell.configure(myStory[indexPath.row])
         }
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 300)
+        return CGSize(width: collectionView.bounds.width, height: 100)
     }
     
     
@@ -77,17 +77,9 @@ extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, U
     // =======
     // HELPERS
     // =======
-    
-    func updateCollectionView(storyText:String) {
-        myStory.append(MyStory(storyText: storyText))
-        let indexPath = NSIndexPath(forItem: myStory.count - 1, inSection: 0)
-        collectionView.insertItemsAtIndexPaths([indexPath])
-        collectionView.reloadData()
-        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
-    }
 
     func setStoryAndButtonText(storyRoute:Story) {
-        updateCollectionView(storyRoute.storyText)
+        feedStorySentencesWithDelay(storyRoute)
         choiceAButtonLabel.text = storyRoute.buttonATitle
         choiceBButtonLabel.text = storyRoute.buttonBTitle
     }
