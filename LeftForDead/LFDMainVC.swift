@@ -16,6 +16,9 @@ class LFDMainVC: UIViewController {
     // =========
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var choiceAButtonLabel: UIButton!
+    @IBOutlet weak var choiceBButtonLabel: UIButton!
+    
     private var machine:StateMachine<LFDMainVC>!
     var myStory: [MyStory] = []
     
@@ -72,6 +75,8 @@ class LFDMainVC: UIViewController {
     @IBAction func choiceAtapped(sender: UIButton) {
         switch machine.state {
         case .Beginning:
+            choiceAButtonLabel.titleLabel?.text = Story.Ch1RouteA.buttonATitle
+            choiceBButtonLabel.titleLabel?.text = Story.Ch1RouteA.buttonBTitle
             machine.state = .Ch1RouteA
         case .Ch1RouteA:
             machine.state = .Ch1RouteAA
@@ -95,6 +100,8 @@ class LFDMainVC: UIViewController {
     @IBAction func choiceBtapped(sender: UIButton) {
         switch machine.state {
         case .Beginning:
+            choiceAButtonLabel.titleLabel?.text = Story.Ch1RouteA.buttonATitle
+            choiceBButtonLabel.titleLabel?.text = Story.Ch1RouteA.buttonBTitle
             machine.state = .Ch1RouteB
         case .Ch1RouteA:
             machine.state = .Ch1RouteAB

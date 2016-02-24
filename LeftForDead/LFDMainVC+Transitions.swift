@@ -40,7 +40,10 @@ extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, U
     func didTransitionFrom(from: StateType, to: StateType) {
         switch (from, to) {
         case (.Beginning, .Ch1RouteA):
+//            setStoryAndButtonText(Story.Ch1RouteA.storyText, chapter: 1, buttonAText: Story.Ch1RouteA.buttonATitle, buttonBText: Story.Ch1RouteA.buttonBTitle)
             updateCollectionView(Story.Ch1RouteA.storyText, chapter: 1)
+//            choiceAButtonLabel.titleLabel?.text = Story.Ch1RouteA.buttonATitle
+//            choiceBButtonLabel.titleLabel?.text = Story.Ch1RouteA.buttonBTitle
         case (.Beginning, .Ch1RouteB):
             updateCollectionView(Story.Ch1RouteB.storyText, chapter: 1)
         
@@ -84,9 +87,13 @@ extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, U
         collectionView.insertItemsAtIndexPaths([indexPath])
         collectionView.reloadData()
         collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
-//        self.collectionView?.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: UICollectionViewScrollPosition.Top, animated: false)
     }
     
+    func setStoryAndButtonText(storyText:String, chapter:Int, buttonAText:String, buttonBText:String) {
+        updateCollectionView(storyText, chapter: chapter)
+        choiceAButtonLabel.titleLabel?.text = buttonAText
+        choiceBButtonLabel.titleLabel?.text = buttonBText
+    }
     
     
 }
