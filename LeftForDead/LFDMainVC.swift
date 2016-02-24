@@ -20,7 +20,7 @@ class LFDMainVC: UIViewController {
     @IBOutlet weak var choiceBButtonLabel: UILabel!
     
     private var machine:StateMachine<LFDMainVC>!
-    var myStory: [MyStory] = []
+    var myStory: [String] = []
     
     
     // ==================
@@ -58,8 +58,7 @@ class LFDMainVC: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        let storyBeginning = MyStory(storyText: Story.Beginning.storyText)
-        myStory.append(storyBeginning)
+        feedStorySentencesWithDelay(Story.Beginning)
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,6 +114,22 @@ class LFDMainVC: UIViewController {
             machine.state = .Ch1RouteBAB
         default:
             print("Unknown action where state is \(machine.state)")
+        }
+    }
+    
+    // =======
+    // HELPERS
+    // =======
+    
+    func feedStorySentencesWithDelay(nextStorySection:Story) {
+        for sentence in 0...nextStorySection.storyText.count-1 {
+            let delay = 1.0 * Double(sentence)
+            Helper.delay(delay, closure: { () -> () in
+                self.myStory.append(nextStorySection.storyText[sentence])
+                let indexPath = NSIndexPath(forItem: self.myStory.count - 1, inSection: 0)
+                self.collectionView.reloadData()
+                self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+            })
         }
     }
     
