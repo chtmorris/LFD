@@ -16,6 +16,9 @@ class LFDMainVC: UIViewController {
     // =========
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var choiceAButtonLabel: UILabel!
+    @IBOutlet weak var choiceBButtonLabel: UILabel!
+    
     private var machine:StateMachine<LFDMainVC>!
     var myStory: [MyStory] = []
     
@@ -55,7 +58,7 @@ class LFDMainVC: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        let storyBeginning = MyStory(storyText: Story.Beginning.storyText, chapter: 1)
+        let storyBeginning = MyStory(storyText: Story.Beginning.storyText)
         myStory.append(storyBeginning)
     }
 

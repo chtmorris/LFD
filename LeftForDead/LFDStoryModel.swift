@@ -154,4 +154,79 @@ enum Story {
             "It’s a long journey, and there’s no guarantee you will survive. But if you do, you will be the first ten-year-old ever to have done so."
         }
     }
+    
+    var buttonATitle: String {
+        switch self{
+        case .Beginning:
+            return "Head for the river"
+            
+        case .Ch1RouteA:
+            return "Try to catch a fish"
+            
+        case .Ch1RouteAA:
+            return "Get back to the village. Now."
+            
+        case .Ch1RouteAAA:
+            return "NO CHOICE"
+            
+        case .Ch1RouteAAB:
+            return "NO CHOICE"
+            
+        case .Ch1RouteAB:
+            return "NO CHOICE"
+            
+        case .Ch1RouteB:
+            return "Call and wave to the rider"
+            
+        case .Ch1RouteBA:
+            return "Try and plead with him"
+            
+        case .Ch1RouteBAA:
+            return "GAME OVER"
+            
+        case .Ch1RouteBAB:
+            return "GAME OVER"
+            
+        case .Ch1RouteBB:
+            return "END OF STORY"
+        }
+    }
+    
+    var buttonBTitle: String {
+        switch self{
+        case .Beginning:
+            return "Go back to the village"
+            
+        case .Ch1RouteA:
+            return "Head back to the village"
+            
+        case .Ch1RouteAA:
+            return "Keep trying for a fish"
+            
+        case .Ch1RouteAAA:
+            return "NO CHOICE"
+            
+        case .Ch1RouteAAB:
+            return "NO CHOICE"
+            
+        case .Ch1RouteAB:
+            return "NO CHOICE"
+            
+        case .Ch1RouteB:
+            return "Duck and hide in the long grass"
+            
+        case .Ch1RouteBA:
+            return "Run!"
+            
+        case .Ch1RouteBAA:
+            return "GAME OVER"
+            
+        case .Ch1RouteBAB:
+            return "GAME OVER"
+            
+        case .Ch1RouteBB:
+            return "END OF STORY"
+        }
+    }
+
 }
