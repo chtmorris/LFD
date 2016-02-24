@@ -118,7 +118,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="choiceAButton" destination="fhR-23-rOm" id="uUF-LW-etD"/>
                         <outlet property="choiceAButtonLabel" destination="5YM-03-jps" id="SoT-yF-R70"/>
+                        <outlet property="choiceBButton" destination="n0Y-B6-9eE" id="ere-RB-sf2"/>
                         <outlet property="choiceBButtonLabel" destination="QTm-6A-PqV" id="rFf-uq-aAw"/>
                         <outlet property="collectionView" destination="gFa-pN-Sb3" id="53W-WC-8jz"/>
                     </connections>

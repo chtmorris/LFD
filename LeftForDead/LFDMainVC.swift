@@ -18,11 +18,15 @@ class LFDMainVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var choiceAButtonLabel: UILabel!
     @IBOutlet weak var choiceBButtonLabel: UILabel!
+    @IBOutlet weak var choiceAButton: UIButton!
+    @IBOutlet weak var choiceBButton: UIButton!
+    
+    
     
     private var machine:StateMachine<LFDMainVC>!
     var myStory: [String] = []
     
-    
+
     // ==================
     // STATEMACHINE SETUP
     // ==================
@@ -58,6 +62,7 @@ class LFDMainVC: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        hideButtons(true)
         feedStorySentencesWithDelay(Story.Beginning)
     }
 
@@ -92,6 +97,7 @@ class LFDMainVC: UIViewController {
         default:
             print("Unknown action where state is \(machine.state)")
         }
+        hideButtons(true)
     }
     
     @IBAction func choiceBtapped(sender: UIButton) {
@@ -115,6 +121,7 @@ class LFDMainVC: UIViewController {
         default:
             print("Unknown action where state is \(machine.state)")
         }
+        hideButtons(true)
     }
     
     // =======
@@ -123,14 +130,26 @@ class LFDMainVC: UIViewController {
     
     func feedStorySentencesWithDelay(nextStorySection:Story) {
         for sentence in 0...nextStorySection.storyText.count-1 {
+            
             let delay = 1.0 * Double(sentence)
             Helper.delay(delay, closure: { () -> () in
                 self.myStory.append(nextStorySection.storyText[sentence])
                 let indexPath = NSIndexPath(forItem: self.myStory.count - 1, inSection: 0)
                 self.collectionView.reloadData()
                 self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+                
+                if sentence == nextStorySection.storyText.count-1{
+                    self.hideButtons(false)
+                }
             })
         }
+    }
+    
+    func hideButtons(hide:Bool){
+        choiceAButtonLabel.hidden = hide
+        choiceBButtonLabel.hidden = hide
+        choiceAButton.hidden = hide
+        choiceBButton.hidden = hide
     }
     
 }
