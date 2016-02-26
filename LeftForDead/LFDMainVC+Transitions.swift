@@ -22,6 +22,15 @@ extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, U
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StoryTextCell", forIndexPath: indexPath)
         if let cell = cell as? LFDStoryTextCell {
             cell.configure(myStory[indexPath.row])
+            
+            let totalStoryLength = myStory.count-1
+            if (totalStoryLength - indexPath.row) > 3 {
+                cell.storyTextLabel.alpha = 0.3
+            } else {
+                let alphaOfText = CGFloat((5 - Double(totalStoryLength - indexPath.row)) / 5)
+                cell.storyTextLabel.alpha = alphaOfText
+            }
+
         }
         return cell
     }
