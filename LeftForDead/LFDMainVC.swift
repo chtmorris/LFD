@@ -15,13 +15,14 @@ class LFDMainVC: UIViewController {
     // VARIABLES
     // =========
     
+    let gradientLayer = CAGradientLayer()
+    @IBOutlet weak var gradientView: UIView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var choiceAButtonLabel: UILabel!
     @IBOutlet weak var choiceBButtonLabel: UILabel!
     @IBOutlet weak var choiceAButton: UIButton!
     @IBOutlet weak var choiceBButton: UIButton!
-    
-    
     
     private var machine:StateMachine<LFDMainVC>!
     var myStory: [String] = []
@@ -59,16 +60,17 @@ class LFDMainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addGradientBackground()
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         
         hideButtons(true)
         feedStorySentencesWithDelay(Story.Beginning)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 
     
@@ -124,6 +126,33 @@ class LFDMainVC: UIViewController {
         hideButtons(true)
     }
     
+    
+    // ==============================
+    // SETTING UP GRADIENT BACKGROUND
+    // ==============================
+    
+    func addGradientBackground() {
+        self.gradientView.backgroundColor = UIColor.blackColor()
+        gradientLayer.frame = self.gradientView.bounds
+        
+        let color1 = UIColor(red: 20/255, green: 0, blue: 116/255, alpha: 1.0).CGColor as CGColorRef
+        let color2 = UIColor.blackColor().CGColor as CGColorRef
+        gradientLayer.colors = [color1, color2]
+        
+        gradientLayer.locations = [0.0, 0.55]
+        
+//        let color1 = UIColor.yellowColor().CGColor as CGColorRef
+//        let color2 = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0).CGColor as CGColorRef
+//        let color3 = UIColor.clearColor().CGColor as CGColorRef
+//        let color4 = UIColor(white: 0.0, alpha: 0.7).CGColor as CGColorRef
+//        gradientLayer.colors = [color1, color2, color3, color4]
+//        
+//        gradientLayer.locations = [0.0, 0.25, 0.75, 1.0]
+        
+        self.gradientView.layer.addSublayer(gradientLayer)
+    }
+    
+    
     // =======
     // HELPERS
     // =======
@@ -131,16 +160,19 @@ class LFDMainVC: UIViewController {
     func feedStorySentencesWithDelay(nextStorySection:Story) {
         for sentence in 0...nextStorySection.storyText.count-1 {
             
-            let delay = 1.0 * Double(sentence)
+            let delay = 0.3 * Double(sentence)
             Helper.delay(delay, closure: { () -> () in
                 self.myStory.append(nextStorySection.storyText[sentence])
                 let indexPath = NSIndexPath(forItem: self.myStory.count - 1, inSection: 0)
                 self.collectionView.reloadData()
-                self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+                self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Bottom, animated: true)
                 
                 if sentence == nextStorySection.storyText.count-1{
-                    self.hideButtons(false)
+                    UIView.animateWithDuration(2.5, delay: 2.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                        self.hideButtons(false)
+                        }, completion: nil)
                 }
+                
             })
         }
     }
