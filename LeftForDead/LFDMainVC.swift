@@ -150,12 +150,12 @@ class LFDMainVC: UIViewController {
 //            let characterCount = Double(nextStorySection.storyText[sentence].characters.count)
 //            let delay = (1 + characterCount/50) * Double(sentence)
 
-            let delay = 0.2 * Double(sentence)
+            let delay = 2.0 * Double(sentence)
             Helper.delay(delay, closure: { () -> () in
                 self.myStory.append(nextStorySection.storyText[sentence])
                 let indexPath = NSIndexPath(forItem: self.myStory.count - 1, inSection: 0)
                 self.collectionView.reloadData()
-                self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Bottom, animated: true)
+                self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
                 
                 if sentence == nextStorySection.storyText.count-1 {
                     
@@ -164,7 +164,7 @@ class LFDMainVC: UIViewController {
                             print("No choice navigated through")
                             self.choiceASelected()
                         } else {
-                            UIView.animateWithDuration(2.5, delay: 2.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                            UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                                 self.hideButtons(false)
                                 }, completion: nil)
                         }
@@ -176,8 +176,14 @@ class LFDMainVC: UIViewController {
     }
     
     func hideButtons(hide:Bool){
-        choiceAButtonLabel.hidden = hide
-        choiceBButtonLabel.hidden = hide
+        if hide == true {
+            choiceAButtonLabel.alpha = 0
+            choiceBButtonLabel.alpha = 0
+        } else {
+            choiceAButtonLabel.alpha = 1
+            choiceBButtonLabel.alpha = 1
+        }
+
         choiceAButton.hidden = hide
         choiceBButton.hidden = hide
     }
