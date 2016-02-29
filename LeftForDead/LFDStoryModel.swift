@@ -36,13 +36,16 @@ enum Story {
             "Perhaps, though, you ought to head back to the village."]
        
         case .Ch1RouteA:
-            return ["On weary legs you trudge down the slope towards the river. At least once you’ve had a drink you’ll be able to think about things more clearly and decide what to do next.",
+            return ["On weary legs you trudge down the slope towards the river.",
+            "At least once you’ve had a drink you’ll be able to think about things more clearly and decide what to do next.",
             "The slope gets steeper as you approach the river. You hang on to the slender trunks of trees on the bank as you clamber down.",
             "You splash into the shallow water. Its icy bite reinvigorates you.",
             "You cup the clear water into your hands and drink deeply several times. You feel replenished.",
             "Then you see a flash of silver.",
             "A fish.",
-            "Seeing it makes you realise how hungry you are. You don’t have any means to make a fire, but you could eat a fish raw if it was that fresh - still alive, in fact. The nourishment might do you good for whatever lies ahead. On the other hand, fish can be tricky to catch, and maybe you ought to head back to the village now."]
+            "Seeing it makes you realise how hungry you are. You don’t have any means to make a fire, but you could eat a fish raw if it was that fresh.",
+            "Still alive, in fact.",
+            "The nourishment might do you good for whatever lies ahead. On the other hand, fish can be tricky to catch, and maybe you ought to head back to the village now."]
         
         case .Ch1RouteAA:
             return ["You stand facing against the flow of the river, staying alert for more silvery flashes.",
@@ -67,7 +70,8 @@ enum Story {
             "You bite into it while it twists and turns.",
             "It soon stops.",
             "You gobble down the cold, raw flesh.",
-            "It’s not the most delicious meal you’ve ever eaten, but you feel better for it. That extra bit of nourishment might just mean the difference between life and death.",
+            "It’s not the most delicious meal you’ve ever eaten, but you feel better for it.",
+            "That extra bit of nourishment might just mean the difference between life and death.",
             "Satisfied, you clamber back up the bank and start to head back to the village.",
             "You pass the spot where you regained consciousness. The thick column of smoke is still rising from the village a short way away."]
             
@@ -80,7 +84,8 @@ enum Story {
             return ["You head across the grassy plaing towards the village. Fear envelops you in a web of darkness. Is it possible that anybody could be left alive?",
             "What about your family? Your friends?",
             "Of course, you had heard the stories of the Raiders and what they did to other villages. But a part of you always believed the stories were exaggerated.",
-            "Images of the carnage and destruction flash back in your mind. Children screaming. Homes burning. Raiders on horseback cutting down everyone and everything in their path.",
+            "Images of the carnage and destruction flash back in your mind. Children screaming. Homes burning.",
+            "Raiders on horseback cutting down everyone and everything in their path.",
             "You quicken your pace, eager to get back to your home.",
             "A moment later you freeze.",
             "There is a dark shape heading towards you through the grass.",
@@ -98,7 +103,8 @@ enum Story {
             "Close enough for you to see the bloodstains on his clothing…",
             "Close enough for you to see the curved blade of the Raiders hanging at his side…",
             "His horse picks up speed as he bears down on you.",
-            "If you run now, you might be able to get away. But can you outrun a man on horseback? Maybe it would be better to try and plead with him. But then again, Raiders aren’t known for their empathy."]
+            "If you run now, you might be able to get away. But can you outrun a man on horseback?",
+            "Maybe it would be better to try and plead with him. But then again, Raiders aren’t known for their empathy."]
         
         case .Ch1RouteBAA:
             return ["You hold your hands up in a gesture of submission.",
@@ -129,7 +135,8 @@ enum Story {
             "The pounding hooves of the Raider’s horse grow louder as he approaches.",
             "He is right on top of you. He’ll see you for sure -",
             "And then the horse and the Raider pass, and you hear them galloping away into the distance.",
-            "You stay crouched for a good fifteen minutes more, just in case the Raider is bluffing, and you’re still being watched. Deep down, though, a part of you knows that that isn’t the Raiders’ style. If he knew you were there, you’d be dead already. No games.",
+            "You stay crouched for a good fifteen minutes more, just in case the Raider is bluffing, and you’re still being watched.",
+            "Deep down, though, a part of you knows that that isn’t the Raiders’ style. If he knew you were there, you’d be dead already. No games.",
             "Slowly you peer above the grassline. You appear to be alone.",
             "You stand up and start heading towards the village.",
             "You guess it will take about ten minutes for you to walk there.",

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC285B831C83FBFB00A1563E /* LFDMainVC+BackgroundGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC285B821C83FBFB00A1563E /* LFDMainVC+BackgroundGradients.swift */; };
 		EC9227901C7C531600138769 /* LFDMyStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC92278F1C7C531600138769 /* LFDMyStory.swift */; };
 		EC9227921C7D7A9F00138769 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9227911C7D7A9F00138769 /* Helpers.swift */; };
 		ECACC8841C7AB7CC0061D95D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8831C7AB7CC0061D95D /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC285B821C83FBFB00A1563E /* LFDMainVC+BackgroundGradients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LFDMainVC+BackgroundGradients.swift"; sourceTree = "<group>"; };
 		EC92278F1C7C531600138769 /* LFDMyStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDMyStory.swift; sourceTree = "<group>"; };
 		EC9227911C7D7A9F00138769 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		ECACC8801C7AB7CC0061D95D /* LeftForDead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeftForDead.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 			children = (
 				ECACC8851C7AB7CC0061D95D /* LFDMainVC.swift */,
 				ECACC8B51C7C05EE0061D95D /* LFDMainVC+Transitions.swift */,
+				EC285B821C83FBFB00A1563E /* LFDMainVC+BackgroundGradients.swift */,
 				ECACC8BA1C7C0FB10061D95D /* LFDStoryTextCell.swift */,
 			);
 			name = ViewControllers;
@@ -303,6 +306,7 @@
 				EC9227901C7C531600138769 /* LFDMyStory.swift in Sources */,
 				EC9227921C7D7A9F00138769 /* Helpers.swift in Sources */,
 				ECACC8B21C7ABC780061D95D /* StateMachine.swift in Sources */,
+				EC285B831C83FBFB00A1563E /* LFDMainVC+BackgroundGradients.swift in Sources */,
 				ECACC8B91C7C07200061D95D /* LFDStoryModel.swift in Sources */,
 				ECACC8841C7AB7CC0061D95D /* AppDelegate.swift in Sources */,
 				ECACC8B61C7C05EE0061D95D /* LFDMainVC+Transitions.swift in Sources */,

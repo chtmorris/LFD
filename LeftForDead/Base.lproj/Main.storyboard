@@ -18,13 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaa-aZ-jPD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Head for the river" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YM-03-jps">
                                 <rect key="frame" x="5" y="509" width="293" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="cTy-da-1Gi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.20784313730000001" green="0.56470588239999997" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                <color key="textColor" red="0.27058823529411763" green="0.19215686274509802" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go back to the village" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTm-6A-PqV">
@@ -32,8 +36,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="28L-NE-Xe6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.16862745100000001" green="0.47058823529999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
+                                <color key="textColor" red="0.27058823529411763" green="0.19215686274509802" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fhR-23-rOm">
@@ -41,12 +45,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="B5E-Gv-BQ2"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="15"/>
                                 <connections>
                                     <action selector="choiceAtapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gVi-BB-9On"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gFa-pN-Sb3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="509"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="493"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y41-g0-8cb">
                                     <size key="itemSize" width="600" height="161"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -63,13 +69,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text cell" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roy-Nx-mUe">
                                                     <rect key="frame" x="28" y="8" width="544" height="145"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="roy-Nx-mUe" firstAttribute="leading" secondItem="xIJ-LW-0b4" secondAttribute="leadingMargin" constant="20" id="0rk-bi-yxV"/>
                                             <constraint firstItem="roy-Nx-mUe" firstAttribute="bottom" secondItem="xIJ-LW-0b4" secondAttribute="bottomMargin" id="Eht-H8-fEG"/>
@@ -94,26 +101,30 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gaa-aZ-jPD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3oJ-va-kaA"/>
                             <constraint firstItem="5YM-03-jps" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="6c4-ll-1O4"/>
                             <constraint firstItem="QTm-6A-PqV" firstAttribute="leading" secondItem="5YM-03-jps" secondAttribute="trailing" constant="5" id="DIZ-wy-NfO"/>
                             <constraint firstItem="n0Y-B6-9eE" firstAttribute="leading" secondItem="fhR-23-rOm" secondAttribute="trailing" constant="5" id="Dsb-Sq-5LC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fhR-23-rOm" secondAttribute="bottom" id="F7f-Bc-zYf"/>
                             <constraint firstAttribute="trailing" secondItem="n0Y-B6-9eE" secondAttribute="trailing" constant="5" id="FpS-9E-tef"/>
                             <constraint firstItem="gFa-pN-Sb3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="L93-ZN-ufU"/>
-                            <constraint firstItem="5YM-03-jps" firstAttribute="top" secondItem="gFa-pN-Sb3" secondAttribute="bottom" id="LS7-2h-94U"/>
+                            <constraint firstItem="5YM-03-jps" firstAttribute="top" secondItem="gFa-pN-Sb3" secondAttribute="bottom" constant="16" id="LS7-2h-94U"/>
                             <constraint firstItem="n0Y-B6-9eE" firstAttribute="leading" secondItem="fhR-23-rOm" secondAttribute="trailing" constant="5" id="MIQ-dm-Ez4"/>
-                            <constraint firstItem="fhR-23-rOm" firstAttribute="top" secondItem="gFa-pN-Sb3" secondAttribute="bottom" id="OIf-sL-39g"/>
+                            <constraint firstItem="gaa-aZ-jPD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ndr-zw-Sr2"/>
+                            <constraint firstItem="fhR-23-rOm" firstAttribute="top" secondItem="gFa-pN-Sb3" secondAttribute="bottom" constant="16" id="OIf-sL-39g"/>
                             <constraint firstItem="QTm-6A-PqV" firstAttribute="leading" secondItem="5YM-03-jps" secondAttribute="trailing" constant="5" id="W4y-5K-fb9"/>
                             <constraint firstItem="n0Y-B6-9eE" firstAttribute="width" secondItem="fhR-23-rOm" secondAttribute="width" id="Wc1-eL-jq8"/>
                             <constraint firstItem="QTm-6A-PqV" firstAttribute="width" secondItem="5YM-03-jps" secondAttribute="width" id="YKc-nR-qFz"/>
+                            <constraint firstAttribute="trailing" secondItem="gaa-aZ-jPD" secondAttribute="trailing" id="a36-xO-GPd"/>
                             <constraint firstItem="fhR-23-rOm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="bKP-lF-Qz0"/>
                             <constraint firstItem="gFa-pN-Sb3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e4b-5h-94k"/>
                             <constraint firstAttribute="trailing" secondItem="QTm-6A-PqV" secondAttribute="trailing" constant="5" id="ffB-lT-pJQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QTm-6A-PqV" secondAttribute="bottom" id="gZ0-iN-gAS"/>
                             <constraint firstAttribute="trailing" secondItem="gFa-pN-Sb3" secondAttribute="trailing" id="in9-RB-6tK"/>
+                            <constraint firstAttribute="bottom" secondItem="gaa-aZ-jPD" secondAttribute="bottom" id="pS0-oh-tOE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5YM-03-jps" secondAttribute="bottom" id="rMh-vN-XpF"/>
-                            <constraint firstItem="QTm-6A-PqV" firstAttribute="top" secondItem="gFa-pN-Sb3" secondAttribute="bottom" id="rUM-mo-2uI"/>
-                            <constraint firstItem="n0Y-B6-9eE" firstAttribute="top" secondItem="gFa-pN-Sb3" secondAttribute="bottom" id="ubz-ly-cWr"/>
+                            <constraint firstItem="QTm-6A-PqV" firstAttribute="top" secondItem="gFa-pN-Sb3" secondAttribute="bottom" constant="16" id="rUM-mo-2uI"/>
+                            <constraint firstItem="n0Y-B6-9eE" firstAttribute="top" secondItem="gFa-pN-Sb3" secondAttribute="bottom" constant="16" id="ubz-ly-cWr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n0Y-B6-9eE" secondAttribute="bottom" id="y2m-n5-c4U"/>
                         </constraints>
                     </view>
@@ -123,6 +134,7 @@
                         <outlet property="choiceBButton" destination="n0Y-B6-9eE" id="ere-RB-sf2"/>
                         <outlet property="choiceBButtonLabel" destination="QTm-6A-PqV" id="rFf-uq-aAw"/>
                         <outlet property="collectionView" destination="gFa-pN-Sb3" id="53W-WC-8jz"/>
+                        <outlet property="gradientView" destination="gaa-aZ-jPD" id="JSX-zH-gda"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
