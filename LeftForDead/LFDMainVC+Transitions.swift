@@ -8,53 +8,7 @@
 
 import UIKit
 
-extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    // ===============
-    // COLLECTION VIEW
-    // ===============
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myStory.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StoryTextCell", forIndexPath: indexPath)
-        if let cell = cell as? LFDStoryTextCell {
-            cell.configure(myStory[indexPath.row])
-            
-            let totalStoryLength = myStory.count-1
-            if (totalStoryLength - indexPath.row) > 3 {
-                UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                    cell.storyTextLabel.alpha = 0.3
-                    }, completion: nil)
-            } else {
-                UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                    let alphaOfText = CGFloat((5 - Double(totalStoryLength - indexPath.row)) / 5)
-                    cell.storyTextLabel.alpha = alphaOfText
-                    }, completion: nil)
-            }
-            
-            if totalStoryLength == indexPath.row {
-                cell.storyTextLabel.alpha = 0
-                UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                    cell.storyTextLabel.alpha = 1
-                    }, completion: nil)
-            }
-
-        }
-        return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 115)
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        let screenHeight = screenSize.height
-        return UIEdgeInsetsMake(0, 0, screenHeight/3, 0)
-    }
+extension LFDMainVC: StateMachineDelegateProtocol {
     
     
     // =================
@@ -66,33 +20,43 @@ extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, U
     func didTransitionFrom(from: StateType, to: StateType) {
         switch (from, to) {
         case (.Beginning, .Ch1RouteA):
-           setStoryAndButtonText(Story.Ch1RouteA)
+            myStory.append("DECISION MADE:\n\(Story.Beginning.buttonATitle)")
+            self.setStoryAndButtonText(Story.Ch1RouteA)
         case (.Beginning, .Ch1RouteB):
+            myStory.append("DECISION MADE:\n\(Story.Beginning.buttonBTitle)")
             setStoryAndButtonText(Story.Ch1RouteB)
         
         case (.Ch1RouteA, .Ch1RouteAA):
+            myStory.append("DECISION MADE:\n\(Story.Ch1RouteA.buttonATitle)")
             setStoryAndButtonText(Story.Ch1RouteAA)
         case (.Ch1RouteAA, .Ch1RouteAAA):
+            myStory.append("DECISION MADE:\n\(Story.Ch1RouteAA.buttonATitle)")
             setStoryAndButtonText(Story.Ch1RouteAAA)
         case (.Ch1RouteAA, .Ch1RouteAAB):
+            myStory.append("DECISION MADE:\n\(Story.Ch1RouteAA.buttonBTitle)")
             setStoryAndButtonText(Story.Ch1RouteAAB)
         case (.Ch1RouteAAA, .Ch1RouteB):
             setStoryAndButtonText(Story.Ch1RouteB)
         case (.Ch1RouteAAB, .Ch1RouteB):
             setStoryAndButtonText(Story.Ch1RouteB)
         case (.Ch1RouteA, .Ch1RouteAB):
+            myStory.append("DECISION MADE:\n\(Story.Ch1RouteA.buttonBTitle)")
             setStoryAndButtonText(Story.Ch1RouteAB)
         case (.Ch1RouteAB, .Ch1RouteB):
             setStoryAndButtonText(Story.Ch1RouteB)
         
         case (.Ch1RouteB, .Ch1RouteBA):
+            myStory.append("DECISION MADE:\n\(Story.Ch1RouteB.buttonATitle)")
             setStoryAndButtonText(Story.Ch1RouteBA)
         case (.Ch1RouteBA, .Ch1RouteBAA):
+            myStory.append("DECISION MADE:\n\(Story.Ch1RouteBA.buttonATitle)")
             setStoryAndButtonText(Story.Ch1RouteBAA)
         case (.Ch1RouteBA, .Ch1RouteBAB):
+            myStory.append("DECISION MADE:\n\(Story.Ch1RouteBA.buttonBTitle)")
             setStoryAndButtonText(Story.Ch1RouteBAB)
 
         case (.Ch1RouteB, .Ch1RouteBB):
+            myStory.append("DECISION MADE:\n\(Story.Ch1RouteB.buttonBTitle)")
             setStoryAndButtonText(Story.Ch1RouteBB)
         default:
             break
@@ -105,9 +69,12 @@ extension LFDMainVC: StateMachineDelegateProtocol, UICollectionViewDataSource, U
     // =======
 
     func setStoryAndButtonText(storyRoute:Story) {
-        feedStorySentencesWithDelay(storyRoute)
-        choiceAButtonLabel.text = storyRoute.buttonATitle
-        choiceBButtonLabel.text = storyRoute.buttonBTitle
+        collectionView.reloadData()
+        Helper.delay(1.0, closure: { () -> () in
+            self.feedStorySentencesWithDelay(storyRoute)
+            self.choiceAButtonLabel.text = storyRoute.buttonATitle
+            self.choiceBButtonLabel.text = storyRoute.buttonBTitle
+        })
     }
     
 }

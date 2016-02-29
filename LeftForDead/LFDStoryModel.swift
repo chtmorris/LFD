@@ -45,7 +45,8 @@ enum Story {
             "A fish.",
             "Seeing it makes you realise how hungry you are. You don’t have any means to make a fire, but you could eat a fish raw if it was that fresh.",
             "Still alive, in fact.",
-            "The nourishment might do you good for whatever lies ahead. On the other hand, fish can be tricky to catch, and maybe you ought to head back to the village now."]
+            "The nourishment might do you good for whatever lies ahead. On the other hand, fish can be tricky to catch.",
+            "Maybe you ought to head back to the village now."]
         
         case .Ch1RouteAA:
             return ["You stand facing against the flow of the river, staying alert for more silvery flashes.",
