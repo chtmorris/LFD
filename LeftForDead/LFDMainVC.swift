@@ -79,6 +79,21 @@ class LFDMainVC: UIViewController {
     // ============
     
     @IBAction func choiceAtapped(sender: UIButton) {
+        choiceASelected()
+        hideButtons(true)
+    }
+    
+    @IBAction func choiceBtapped(sender: UIButton) {
+        choiceBSelected()
+        hideButtons(true)
+    }
+    
+    
+    // ==========
+    // STORY FLOW
+    // ==========
+    
+    func choiceASelected() {
         switch machine.state {
         case .Beginning:
             machine.state = .Ch1RouteA
@@ -99,10 +114,9 @@ class LFDMainVC: UIViewController {
         default:
             print("Unknown action where state is \(machine.state)")
         }
-        hideButtons(true)
     }
     
-    @IBAction func choiceBtapped(sender: UIButton) {
+    func choiceBSelected() {
         switch machine.state {
         case .Beginning:
             machine.state = .Ch1RouteB
@@ -123,7 +137,6 @@ class LFDMainVC: UIViewController {
         default:
             print("Unknown action where state is \(machine.state)")
         }
-        hideButtons(true)
     }
     
     
@@ -160,17 +173,28 @@ class LFDMainVC: UIViewController {
     func feedStorySentencesWithDelay(nextStorySection:Story) {
         for sentence in 0...nextStorySection.storyText.count-1 {
             
-            let delay = 0.3 * Double(sentence)
+//            let characterCount = Double(nextStorySection.storyText[sentence].characters.count)
+//            let delay = (1 + characterCount/50) * Double(sentence)
+
+            let delay = 0.2 * Double(sentence)
             Helper.delay(delay, closure: { () -> () in
                 self.myStory.append(nextStorySection.storyText[sentence])
                 let indexPath = NSIndexPath(forItem: self.myStory.count - 1, inSection: 0)
                 self.collectionView.reloadData()
                 self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Bottom, animated: true)
                 
-                if sentence == nextStorySection.storyText.count-1{
-                    UIView.animateWithDuration(2.5, delay: 2.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                        self.hideButtons(false)
-                        }, completion: nil)
+                if sentence == nextStorySection.storyText.count-1 {
+                    
+                    Helper.delay(1.0, closure: { () -> () in
+                        if nextStorySection.buttonATitle == "NO CHOICE" {
+                            print("No choice navigated through")
+                            self.choiceASelected()
+                        } else {
+                            UIView.animateWithDuration(2.5, delay: 2.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                                self.hideButtons(false)
+                                }, completion: nil)
+                        }
+                    })
                 }
                 
             })
