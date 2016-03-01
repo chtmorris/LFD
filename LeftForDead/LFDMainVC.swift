@@ -150,7 +150,7 @@ class LFDMainVC: UIViewController {
 //            let characterCount = Double(nextStorySection.storyText[sentence].characters.count)
 //            let delay = (1 + characterCount/50) * Double(sentence)
 
-            let delay = 2.2 * Double(sentence)
+            let delay = 3.0 * Double(sentence)
             Helper.delay(delay, closure: { () -> () in
                 self.myStory.append(nextStorySection.storyText[sentence])
                 let indexPath = NSIndexPath(forItem: self.myStory.count - 1, inSection: 0)
