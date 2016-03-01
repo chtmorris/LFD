@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC285B831C83FBFB00A1563E /* LFDMainVC+backgroundGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC285B821C83FBFB00A1563E /* LFDMainVC+backgroundGradients.swift */; };
+		EC285B851C842C7E00A1563E /* LFDMainVC+collectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC285B841C842C7E00A1563E /* LFDMainVC+collectionView.swift */; };
+		EC9227901C7C531600138769 /* LFDMyStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC92278F1C7C531600138769 /* LFDMyStory.swift */; };
+		EC9227921C7D7A9F00138769 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9227911C7D7A9F00138769 /* Helpers.swift */; };
 		ECACC8841C7AB7CC0061D95D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8831C7AB7CC0061D95D /* AppDelegate.swift */; };
-		ECACC8861C7AB7CC0061D95D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8851C7AB7CC0061D95D /* ViewController.swift */; };
+		ECACC8861C7AB7CC0061D95D /* LFDMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8851C7AB7CC0061D95D /* LFDMainVC.swift */; };
 		ECACC8891C7AB7CC0061D95D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECACC8871C7AB7CC0061D95D /* Main.storyboard */; };
 		ECACC88B1C7AB7CC0061D95D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECACC88A1C7AB7CC0061D95D /* Assets.xcassets */; };
 		ECACC88E1C7AB7CC0061D95D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECACC88C1C7AB7CC0061D95D /* LaunchScreen.storyboard */; };
 		ECACC8991C7AB7CD0061D95D /* LeftForDeadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8981C7AB7CD0061D95D /* LeftForDeadTests.swift */; };
 		ECACC8A41C7AB7CD0061D95D /* LeftForDeadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8A31C7AB7CD0061D95D /* LeftForDeadUITests.swift */; };
 		ECACC8B21C7ABC780061D95D /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8B11C7ABC780061D95D /* StateMachine.swift */; };
+		ECACC8B61C7C05EE0061D95D /* LFDMainVC+transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8B51C7C05EE0061D95D /* LFDMainVC+transitions.swift */; };
+		ECACC8B91C7C07200061D95D /* LFDStoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8B81C7C07200061D95D /* LFDStoryModel.swift */; };
+		ECACC8BB1C7C0FB10061D95D /* LFDStoryTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8BA1C7C0FB10061D95D /* LFDStoryTextCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC285B821C83FBFB00A1563E /* LFDMainVC+backgroundGradients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LFDMainVC+backgroundGradients.swift"; sourceTree = "<group>"; };
+		EC285B841C842C7E00A1563E /* LFDMainVC+collectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LFDMainVC+collectionView.swift"; sourceTree = "<group>"; };
+		EC92278F1C7C531600138769 /* LFDMyStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDMyStory.swift; sourceTree = "<group>"; };
+		EC9227911C7D7A9F00138769 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		ECACC8801C7AB7CC0061D95D /* LeftForDead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeftForDead.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECACC8831C7AB7CC0061D95D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECACC8851C7AB7CC0061D95D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECACC8851C7AB7CC0061D95D /* LFDMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFDMainVC.swift; sourceTree = "<group>"; };
 		ECACC8881C7AB7CC0061D95D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECACC88A1C7AB7CC0061D95D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECACC88D1C7AB7CC0061D95D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +60,9 @@
 		ECACC8A31C7AB7CD0061D95D /* LeftForDeadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftForDeadUITests.swift; sourceTree = "<group>"; };
 		ECACC8A51C7AB7CD0061D95D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECACC8B11C7ABC780061D95D /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		ECACC8B51C7C05EE0061D95D /* LFDMainVC+transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LFDMainVC+transitions.swift"; sourceTree = "<group>"; };
+		ECACC8B81C7C07200061D95D /* LFDStoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDStoryModel.swift; sourceTree = "<group>"; };
+		ECACC8BA1C7C0FB10061D95D /* LFDStoryTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDStoryTextCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +114,11 @@
 			isa = PBXGroup;
 			children = (
 				ECACC8831C7AB7CC0061D95D /* AppDelegate.swift */,
-				ECACC8851C7AB7CC0061D95D /* ViewController.swift */,
+				EC9227911C7D7A9F00138769 /* Helpers.swift */,
+				ECACC8B31C7AED940061D95D /* StateMachine */,
+				ECACC8B71C7C06FB0061D95D /* StoryModel */,
+				ECACC8B41C7AEDAE0061D95D /* ViewControllers */,
 				ECACC8871C7AB7CC0061D95D /* Main.storyboard */,
-				ECACC8B11C7ABC780061D95D /* StateMachine.swift */,
 				ECACC88A1C7AB7CC0061D95D /* Assets.xcassets */,
 				ECACC88C1C7AB7CC0061D95D /* LaunchScreen.storyboard */,
 				ECACC88F1C7AB7CC0061D95D /* Info.plist */,
@@ -126,6 +142,35 @@
 				ECACC8A51C7AB7CD0061D95D /* Info.plist */,
 			);
 			path = LeftForDeadUITests;
+			sourceTree = "<group>";
+		};
+		ECACC8B31C7AED940061D95D /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				ECACC8B11C7ABC780061D95D /* StateMachine.swift */,
+			);
+			name = StateMachine;
+			sourceTree = "<group>";
+		};
+		ECACC8B41C7AEDAE0061D95D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ECACC8851C7AB7CC0061D95D /* LFDMainVC.swift */,
+				ECACC8B51C7C05EE0061D95D /* LFDMainVC+transitions.swift */,
+				EC285B841C842C7E00A1563E /* LFDMainVC+collectionView.swift */,
+				EC285B821C83FBFB00A1563E /* LFDMainVC+backgroundGradients.swift */,
+				ECACC8BA1C7C0FB10061D95D /* LFDStoryTextCell.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ECACC8B71C7C06FB0061D95D /* StoryModel */ = {
+			isa = PBXGroup;
+			children = (
+				ECACC8B81C7C07200061D95D /* LFDStoryModel.swift */,
+				EC92278F1C7C531600138769 /* LFDMyStory.swift */,
+			);
+			name = StoryModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +241,7 @@
 				TargetAttributes = {
 					ECACC87F1C7AB7CC0061D95D = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 79HLANPT5D;
 					};
 					ECACC8931C7AB7CD0061D95D = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -259,9 +305,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECACC8861C7AB7CC0061D95D /* ViewController.swift in Sources */,
+				ECACC8861C7AB7CC0061D95D /* LFDMainVC.swift in Sources */,
+				ECACC8BB1C7C0FB10061D95D /* LFDStoryTextCell.swift in Sources */,
+				EC9227901C7C531600138769 /* LFDMyStory.swift in Sources */,
+				EC9227921C7D7A9F00138769 /* Helpers.swift in Sources */,
 				ECACC8B21C7ABC780061D95D /* StateMachine.swift in Sources */,
+				EC285B831C83FBFB00A1563E /* LFDMainVC+backgroundGradients.swift in Sources */,
+				ECACC8B91C7C07200061D95D /* LFDStoryModel.swift in Sources */,
+				EC285B851C842C7E00A1563E /* LFDMainVC+collectionView.swift in Sources */,
 				ECACC8841C7AB7CC0061D95D /* AppDelegate.swift in Sources */,
+				ECACC8B61C7C05EE0061D95D /* LFDMainVC+transitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,10 +454,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LeftForDead/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mindfundstudio.LeftForDead;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -412,10 +468,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LeftForDead/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mindfundstudio.LeftForDead;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -486,6 +545,7 @@
 				ECACC8AA1C7AB7CD0061D95D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECACC8AB1C7AB7CD0061D95D /* Build configuration list for PBXNativeTarget "LeftForDeadTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +554,7 @@
 				ECACC8AD1C7AB7CD0061D95D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECACC8AE1C7AB7CD0061D95D /* Build configuration list for PBXNativeTarget "LeftForDeadUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +563,7 @@
 				ECACC8B01C7AB7CD0061D95D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
