@@ -47,7 +47,10 @@ class LFDMainVC: UIViewController {
             StoryState.Ch1RouteAAA: [StoryState.Ch1RouteB],
             StoryState.Ch1RouteAAB: [StoryState.Ch1RouteB],
             StoryState.Ch1RouteB: [StoryState.Ch1RouteBA, StoryState.Ch1RouteBB],
-            StoryState.Ch1RouteBA: [StoryState.Ch1RouteBAA, StoryState.Ch1RouteBAB]
+            StoryState.Ch1RouteBA: [StoryState.Ch1RouteBAA, StoryState.Ch1RouteBAB],
+            StoryState.Ch1RouteBAB: [StoryState.Beginning],
+            StoryState.Ch1RouteBAA: [StoryState.Beginning],
+            StoryState.Ch1RouteBB: [StoryState.Beginning]
         ]
 
         machine = StateMachine(initialState: .Beginning, delegate: self, validTransitions: tx)
@@ -111,8 +114,12 @@ class LFDMainVC: UIViewController {
             machine.state = .Ch1RouteBA
         case .Ch1RouteBA:
             machine.state = .Ch1RouteBAA
-        default:
-            print("Unknown action where state is \(machine.state)")
+        case .Ch1RouteBAA:
+            machine.state = .Beginning
+        case .Ch1RouteBAB:
+            machine.state = .Beginning
+        case .Ch1RouteBB:
+            machine.state = .Beginning
         }
     }
     
@@ -134,8 +141,12 @@ class LFDMainVC: UIViewController {
             machine.state = .Ch1RouteBB
         case .Ch1RouteBA:
             machine.state = .Ch1RouteBAB
-        default:
-            print("Unknown action where state is \(machine.state)")
+        case .Ch1RouteBAA:
+            machine.state = .Beginning
+        case .Ch1RouteBAB:
+            machine.state = .Beginning
+        case .Ch1RouteBB:
+            machine.state = .Beginning
         }
     }
     
@@ -150,7 +161,7 @@ class LFDMainVC: UIViewController {
 //            let characterCount = Double(nextStorySection.storyText[sentence].characters.count)
 //            let delay = (1 + characterCount/50) * Double(sentence)
 
-            let delay = 3.0 * Double(sentence)
+            let delay = 0.1 * Double(sentence)
             Helper.delay(delay, closure: { () -> () in
                 self.myStory.append(nextStorySection.storyText[sentence])
                 let indexPath = NSIndexPath(forItem: self.myStory.count - 1, inSection: 0)

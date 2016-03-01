@@ -227,13 +227,13 @@ enum Story {
             return "Run!"
             
         case .Ch1RouteBAA:
-            return "GAME OVER"
+            return "RESTART"
             
         case .Ch1RouteBAB:
-            return "GAME OVER"
+            return "RESTART"
             
         case .Ch1RouteBB:
-            return "END OF STORY"
+            return "RESTART"
         }
     }
 

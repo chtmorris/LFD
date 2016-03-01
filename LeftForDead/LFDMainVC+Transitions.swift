@@ -58,6 +58,17 @@ extension LFDMainVC: StateMachineDelegateProtocol {
         case (.Ch1RouteB, .Ch1RouteBB):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteB.buttonBTitle)")
             setStoryAndButtonText(Story.Ch1RouteBB)
+            
+        case (.Ch1RouteBAA, .Beginning):
+            myStory = []
+            setStoryAndButtonText(Story.Beginning)
+        case (.Ch1RouteBAB, .Beginning):
+            myStory = []
+            setStoryAndButtonText(Story.Beginning)
+        case (.Ch1RouteBB, .Beginning):
+            myStory = []
+            setStoryAndButtonText(Story.Beginning)
+            
         default:
             break
         }
