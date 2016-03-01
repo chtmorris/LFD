@@ -19,6 +19,8 @@ extension LFDMainVC: StateMachineDelegateProtocol {
     
     func didTransitionFrom(from: StateType, to: StateType) {
         switch (from, to) {
+            
+        // BEGINNING
         case (.Beginning, .Ch1RouteA):
             myStory.append("DECISION MADE:\n\(Story.Beginning.buttonATitle)")
             self.setStoryAndButtonText(Story.Ch1RouteA)
@@ -26,6 +28,7 @@ extension LFDMainVC: StateMachineDelegateProtocol {
             myStory.append("DECISION MADE:\n\(Story.Beginning.buttonBTitle)")
             setStoryAndButtonText(Story.Ch1RouteB)
         
+        // CHAPTER 1 - ROUTE A
         case (.Ch1RouteA, .Ch1RouteAA):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteA.buttonATitle)")
             setStoryAndButtonText(Story.Ch1RouteAA)
@@ -45,6 +48,7 @@ extension LFDMainVC: StateMachineDelegateProtocol {
         case (.Ch1RouteAB, .Ch1RouteB):
             setStoryAndButtonText(Story.Ch1RouteB)
         
+        // CHAPTER 1 - ROUTE B
         case (.Ch1RouteB, .Ch1RouteBA):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteB.buttonATitle)")
             setStoryAndButtonText(Story.Ch1RouteBA)
@@ -58,7 +62,8 @@ extension LFDMainVC: StateMachineDelegateProtocol {
         case (.Ch1RouteB, .Ch1RouteBB):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteB.buttonBTitle)")
             setStoryAndButtonText(Story.Ch1RouteBB)
-            
+        
+        // CHAPTER 1 - ROUTE B - FINISH
         case (.Ch1RouteBAA, .Beginning):
             myStory = []
             setStoryAndButtonText(Story.Beginning)
