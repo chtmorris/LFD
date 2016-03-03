@@ -236,5 +236,43 @@ enum Story {
             return "RESTART"
         }
     }
+    
+    var backgroundColor: String {
+        switch self{
+        case .Beginning:
+            return "#140074"
+            
+        case .Ch1RouteA:
+            return "#2C00FF"
+            
+        case .Ch1RouteAA:
+            return "#836AFF"
+            
+        case .Ch1RouteAAA:
+            return "#9B9B9B"
+            
+        case .Ch1RouteAAB:
+            return "#F8FF83"
+            
+        case .Ch1RouteAB:
+            return "#9B9B9B"
+            
+        case .Ch1RouteB:
+            return "#006F10"
+            
+        case .Ch1RouteBA:
+            return "#6F3B00"
+            
+        case .Ch1RouteBAA:
+            return "#B80000"
+            
+        case .Ch1RouteBAB:
+            return "#B80000"
+            
+        case .Ch1RouteBB:
+            return "#FFFFFF"
+        }
+    }
+
 
 }
