@@ -48,7 +48,7 @@ enum Story {
             Sentence(text: "Even down here in the dark, you know they are dead.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "The raiders came through your village, and they leave nobody alive.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "This must be what it feels like to be dead.", delayInSeconds: 5, specialAttribute: "none"),
-            Sentence(text: "The faces swim closer. Here are your friends and family. You can hear them now, soft voices in the void.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "The faces swim closer. Here are your friends and family. You can hear them now, soft voices in the void.", delayInSeconds: 5, specialAttribute: "none"),
             Sentence(text: "Come back. Don’t give up.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "Come back.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You wake.", delayInSeconds: 3, specialAttribute: "none"),
