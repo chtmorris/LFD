@@ -53,7 +53,7 @@ extension LFDMainVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenHeight = screenSize.height
-        return UIEdgeInsetsMake(0, 0, screenHeight/3, 0)
+        return UIEdgeInsetsMake(0, 0, screenHeight/7, 0)
     }
 
 }

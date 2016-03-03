@@ -7,16 +7,13 @@
 //
 
 import UIKit
+import Hue
 
 class LFDMainVC: UIViewController {
-    
     
     // =========
     // VARIABLES
     // =========
-    
-    let gradientLayer = CAGradientLayer()
-    @IBOutlet weak var gradientView: UIView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var choiceAButtonLabel: UILabel!
@@ -24,10 +21,14 @@ class LFDMainVC: UIViewController {
     @IBOutlet weak var choiceAButton: UIButton!
     @IBOutlet weak var choiceBButton: UIButton!
     
+    @IBOutlet weak var gradientView: UIView!
+    let gradientLayer = CAGradientLayer()
+    let gradient = [UIColor.clearColor(), UIColor.blackColor(), UIColor.blackColor()].gradient()
+
     private var machine:StateMachine<LFDMainVC>!
     var myStory: [String] = []
     
-
+    
     // ==================
     // STATEMACHINE SETUP
     // ==================
@@ -47,7 +48,10 @@ class LFDMainVC: UIViewController {
             StoryState.Ch1RouteAAA: [StoryState.Ch1RouteB],
             StoryState.Ch1RouteAAB: [StoryState.Ch1RouteB],
             StoryState.Ch1RouteB: [StoryState.Ch1RouteBA, StoryState.Ch1RouteBB],
-            StoryState.Ch1RouteBA: [StoryState.Ch1RouteBAA, StoryState.Ch1RouteBAB]
+            StoryState.Ch1RouteBA: [StoryState.Ch1RouteBAA, StoryState.Ch1RouteBAB],
+            StoryState.Ch1RouteBAB: [StoryState.Beginning],
+            StoryState.Ch1RouteBAA: [StoryState.Beginning],
+            StoryState.Ch1RouteBB: [StoryState.Beginning]
         ]
 
         machine = StateMachine(initialState: .Beginning, delegate: self, validTransitions: tx)
@@ -60,13 +64,21 @@ class LFDMainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addGradientBackground()
-        
         collectionView.dataSource = self
         collectionView.delegate = self
         
         hideButtons(true)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        addGradientBackground()
+        self.view.backgroundColor = UIColor.hex("#140074")
+        
+        changeBackgroundColor("#0FC300", duration: 15, delay: 35)
+        
         feedStorySentencesWithDelay(Story.Beginning)
+        
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -111,8 +123,12 @@ class LFDMainVC: UIViewController {
             machine.state = .Ch1RouteBA
         case .Ch1RouteBA:
             machine.state = .Ch1RouteBAA
-        default:
-            print("Unknown action where state is \(machine.state)")
+        case .Ch1RouteBAA:
+            machine.state = .Beginning
+        case .Ch1RouteBAB:
+            machine.state = .Beginning
+        case .Ch1RouteBB:
+            machine.state = .Beginning
         }
     }
     
@@ -134,8 +150,12 @@ class LFDMainVC: UIViewController {
             machine.state = .Ch1RouteBB
         case .Ch1RouteBA:
             machine.state = .Ch1RouteBAB
-        default:
-            print("Unknown action where state is \(machine.state)")
+        case .Ch1RouteBAA:
+            machine.state = .Beginning
+        case .Ch1RouteBAB:
+            machine.state = .Beginning
+        case .Ch1RouteBB:
+            machine.state = .Beginning
         }
     }
     
@@ -145,23 +165,22 @@ class LFDMainVC: UIViewController {
     // =======
     
     func feedStorySentencesWithDelay(nextStorySection:Story) {
-        for sentence in 0...nextStorySection.storyText.count-1 {
-            
-//            let characterCount = Double(nextStorySection.storyText[sentence].characters.count)
-//            let delay = (1 + characterCount/50) * Double(sentence)
-
-            let delay = 3.0 * Double(sentence)
-            Helper.delay(delay, closure: { () -> () in
-                self.myStory.append(nextStorySection.storyText[sentence])
+    
+        var paragraph = Paragraph(sentences: nextStorySection.storyText)
+        
+        func showSentence() {
+            if let sentence = paragraph.nextSentence() {
+                
+                // ADD SENTENCE TO MYSTORY
+                self.myStory.append(sentence.text)
                 let indexPath = NSIndexPath(forItem: self.myStory.count - 1, inSection: 0)
                 self.collectionView.reloadData()
                 self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
                 
-                if sentence == nextStorySection.storyText.count-1 {
-                    
+                // DEAL WITH SPECIAL ATTRIBUTES
+                if sentence.specialAttribute == "last sentence" {
                     Helper.delay(1.0, closure: { () -> () in
                         if nextStorySection.buttonATitle == "NO CHOICE" {
-                            print("No choice navigated through")
                             self.choiceASelected()
                         } else {
                             UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
@@ -171,8 +190,15 @@ class LFDMainVC: UIViewController {
                     })
                 }
                 
-            })
+                let delayInSeconds = sentence.delay
+                Helper.delay(delayInSeconds) {
+                    showSentence()
+                } 
+            }
         }
+        
+        showSentence()
+
     }
     
     func hideButtons(hide:Bool){
