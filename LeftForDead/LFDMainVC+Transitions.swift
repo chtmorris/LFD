@@ -23,56 +23,57 @@ extension LFDMainVC: StateMachineDelegateProtocol {
         // BEGINNING
         case (.Beginning, .Ch1RouteA):
             myStory.append("DECISION MADE:\n\(Story.Beginning.buttonATitle)")
-            self.setStoryAndButtonText(Story.Ch1RouteA)
+            self.setStoryButtonAndBackground(Story.Ch1RouteA)
+
         case (.Beginning, .Ch1RouteB):
             myStory.append("DECISION MADE:\n\(Story.Beginning.buttonBTitle)")
-            setStoryAndButtonText(Story.Ch1RouteB)
+            setStoryButtonAndBackground(Story.Ch1RouteB)
         
         // CHAPTER 1 - ROUTE A
         case (.Ch1RouteA, .Ch1RouteAA):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteA.buttonATitle)")
-            setStoryAndButtonText(Story.Ch1RouteAA)
+            setStoryButtonAndBackground(Story.Ch1RouteAA)
         case (.Ch1RouteAA, .Ch1RouteAAA):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteAA.buttonATitle)")
-            setStoryAndButtonText(Story.Ch1RouteAAA)
+            setStoryButtonAndBackground(Story.Ch1RouteAAA)
         case (.Ch1RouteAA, .Ch1RouteAAB):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteAA.buttonBTitle)")
-            setStoryAndButtonText(Story.Ch1RouteAAB)
+            setStoryButtonAndBackground(Story.Ch1RouteAAB)
         case (.Ch1RouteAAA, .Ch1RouteB):
-            setStoryAndButtonText(Story.Ch1RouteB)
+            setStoryButtonAndBackground(Story.Ch1RouteB)
         case (.Ch1RouteAAB, .Ch1RouteB):
-            setStoryAndButtonText(Story.Ch1RouteB)
+            setStoryButtonAndBackground(Story.Ch1RouteB)
         case (.Ch1RouteA, .Ch1RouteAB):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteA.buttonBTitle)")
-            setStoryAndButtonText(Story.Ch1RouteAB)
+            setStoryButtonAndBackground(Story.Ch1RouteAB)
         case (.Ch1RouteAB, .Ch1RouteB):
-            setStoryAndButtonText(Story.Ch1RouteB)
+            setStoryButtonAndBackground(Story.Ch1RouteB)
         
         // CHAPTER 1 - ROUTE B
         case (.Ch1RouteB, .Ch1RouteBA):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteB.buttonATitle)")
-            setStoryAndButtonText(Story.Ch1RouteBA)
+            setStoryButtonAndBackground(Story.Ch1RouteBA)
         case (.Ch1RouteBA, .Ch1RouteBAA):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteBA.buttonATitle)")
-            setStoryAndButtonText(Story.Ch1RouteBAA)
+            setStoryButtonAndBackground(Story.Ch1RouteBAA)
         case (.Ch1RouteBA, .Ch1RouteBAB):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteBA.buttonBTitle)")
-            setStoryAndButtonText(Story.Ch1RouteBAB)
+            setStoryButtonAndBackground(Story.Ch1RouteBAB)
 
         case (.Ch1RouteB, .Ch1RouteBB):
             myStory.append("DECISION MADE:\n\(Story.Ch1RouteB.buttonBTitle)")
-            setStoryAndButtonText(Story.Ch1RouteBB)
+            setStoryButtonAndBackground(Story.Ch1RouteBB)
         
         // CHAPTER 1 - ROUTE B - FINISH
         case (.Ch1RouteBAA, .Beginning):
             myStory = []
-            setStoryAndButtonText(Story.Beginning)
+            setStoryButtonAndBackground(Story.Beginning)
         case (.Ch1RouteBAB, .Beginning):
             myStory = []
-            setStoryAndButtonText(Story.Beginning)
+            setStoryButtonAndBackground(Story.Beginning)
         case (.Ch1RouteBB, .Beginning):
             myStory = []
-            setStoryAndButtonText(Story.Beginning)
+            setStoryButtonAndBackground(Story.Beginning)
             
         default:
             break
@@ -84,13 +85,14 @@ extension LFDMainVC: StateMachineDelegateProtocol {
     // HELPERS
     // =======
 
-    func setStoryAndButtonText(storyRoute:Story) {
+    func setStoryButtonAndBackground(storyRoute:Story) {
         collectionView.reloadData()
         Helper.delay(1.0, closure: { () -> () in
             self.feedStorySentencesWithDelay(storyRoute)
             self.choiceAButtonLabel.text = storyRoute.buttonATitle
             self.choiceBButtonLabel.text = storyRoute.buttonBTitle
         })
+        self.changeBackgroundColor(storyRoute.backgroundColor, duration: 10, delay: 3)
     }
     
 }
