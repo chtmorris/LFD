@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hue
 
 class LFDMainVC: UIViewController {
     
@@ -26,7 +27,8 @@ class LFDMainVC: UIViewController {
     
     private var machine:StateMachine<LFDMainVC>!
     var myStory: [String] = []
-    
+
+    let gradient = [UIColor.clearColor(), UIColor.blackColor(), UIColor.blackColor()].gradient()
 
     // ==================
     // STATEMACHINE SETUP
@@ -63,13 +65,20 @@ class LFDMainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addGradientBackground()
-        
         collectionView.dataSource = self
         collectionView.delegate = self
         
         hideButtons(true)
         feedStorySentencesWithDelay(Story.Beginning)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        addGradientBackground()
+        self.view.backgroundColor = UIColor.hex("#140074")
+        
+        changeBackgroundColor("#0FC300", duration: 15, delay: 35)
+        
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -161,7 +170,7 @@ class LFDMainVC: UIViewController {
 //            let characterCount = Double(nextStorySection.storyText[sentence].characters.count)
 //            let delay = (1 + characterCount/50) * Double(sentence)
 
-            let delay = 0.1 * Double(sentence)
+            let delay = 3.0 * Double(sentence)
             Helper.delay(delay, closure: { () -> () in
                 self.myStory.append(nextStorySection.storyText[sentence])
                 let indexPath = NSIndexPath(forItem: self.myStory.count - 1, inSection: 0)
