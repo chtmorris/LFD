@@ -64,19 +64,19 @@ enum Story {
        
         case .Ch1RouteA:
             return [Sentence(text: "On weary legs you trudge down the slope towards the river.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "At least once you’ve had a drink you’ll be able to think about things more clearly and decide what to do next.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "The slope gets steeper as you approach the river. You hang on to the slender trunks of trees on the bank as you clamber down.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "At least once you’ve had a drink you’ll be able to think about things more clearly and decide what to do next.", delayInSeconds: 5, specialAttribute: "none"),
+            Sentence(text: "The slope gets steeper as you approach the river. You hang on to the slender trunks of trees on the bank as you clamber down.", delayInSeconds: 5, specialAttribute: "none"),
             Sentence(text: "You splash into the shallow water. Its icy bite reinvigorates you.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You cup the clear water into your hands and drink deeply several times. You feel replenished.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "Then you see a flash of silver.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "A fish.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "Seeing it makes you realise how hungry you are. You don’t have any means to make a fire, but you could eat a fish raw if it was that fresh.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "Seeing it makes you realise how hungry you are. You don’t have any means to make a fire, but you could eat a fish raw if it was that fresh.", delayInSeconds: 7, specialAttribute: "none"),
             Sentence(text: "Still alive, in fact.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "The nourishment might do you good for whatever lies ahead. On the other hand, fish can be tricky to catch.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "The nourishment might do you good for whatever lies ahead. On the other hand, fish can be tricky to catch.", delayInSeconds: 4, specialAttribute: "none"),
             Sentence(text: "Maybe you ought to head back to the village now.", delayInSeconds: 3, specialAttribute: "last sentence")]
         
         case .Ch1RouteAA:
-            return [Sentence(text: "You stand facing against the flow of the river, staying alert for more silvery flashes.", delayInSeconds: 3, specialAttribute: "none"),
+            return [Sentence(text: "You stand facing against the flow of the river, staying alert for more silvery flashes.", delayInSeconds: 5, specialAttribute: "none"),
                 Sentence(text: "You see one. You plunge your hands in.", delayInSeconds: 3, specialAttribute: "none"),
                 Sentence(text: "Too slow. Too slow by far.", delayInSeconds: 3, specialAttribute: "none"),
                 Sentence(text: "You wait again.", delayInSeconds: 3, specialAttribute: "none"),
@@ -85,54 +85,54 @@ enum Story {
                 Sentence(text: "This could take long than expected. Your stomach growls with hunger - or is it the anxiety you have to get back to your burning home?", delayInSeconds: 3, specialAttribute: "last sentence")]
         
         case .Ch1RouteAAA:
-            return [Sentence(text: "There are more important things to do right now than waste your time trying to achieve the impossible.", delayInSeconds: 3, specialAttribute: "none"),
+            return [Sentence(text: "There are more important things to do right now than waste your time trying to achieve the impossible.", delayInSeconds: 5, specialAttribute: "none"),
             Sentence(text: "You climb back up the bank and head towards the plume of smoke in the distance.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You pass the spot where you regained consciousness.", delayInSeconds: 3, specialAttribute: "last sentence")]
         
         case .Ch1RouteAAB:
-            return [Sentence(text: "The minutes pass, and so do the fish, slipping easily between your hands. If only you had a net or rod of some kind.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "Your feet are beginning to feel numb in the icy water. This can’t be good for you.", delayInSeconds: 3, specialAttribute: "none"),
+            return [Sentence(text: "The minutes pass, and so do the fish, slipping easily between your hands. If only you had a net or rod of some kind.", delayInSeconds: 5, specialAttribute: "none"),
+            Sentence(text: "Your feet are beginning to feel numb in the icy water. This can’t be good for you.", delayInSeconds: 4, specialAttribute: "none"),
             Sentence(text: "One more attempt, and then it’s time to give up and head -", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "GOT ONE!", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "You’re so surprised, you nearly let it slip out of your grasp. A wriggling fish, glimmering in the sunlight.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "You’re so surprised, you nearly let it slip out of your grasp. A wriggling fish, glimmering in the sunlight.", delayInSeconds: 6, specialAttribute: "none"),
             Sentence(text: "You bite into it while it twists and turns.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "It soon stops.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You gobble down the cold, raw flesh.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "It’s not the most delicious meal you’ve ever eaten, but you feel better for it.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "That extra bit of nourishment might just mean the difference between life and death.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "Satisfied, you clamber back up the bank and start to head back to the village.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "You pass the spot where you regained consciousness. The thick column of smoke is still rising from the village a short way away.", delayInSeconds: 3, specialAttribute: "last sentence")]
+            Sentence(text: "That extra bit of nourishment might just mean the difference between life and death.", delayInSeconds: 4, specialAttribute: "none"),
+            Sentence(text: "Satisfied, you clamber back up the bank and start to head back to the village.", delayInSeconds: 4, specialAttribute: "none"),
+            Sentence(text: "You pass the spot where you regained consciousness. The thick column of smoke is still rising from the village a short way away.", delayInSeconds: 5, specialAttribute: "last sentence")]
             
         case .Ch1RouteAB:
-            return [Sentence(text: "You turn around and climb back up the bank. There are more important things on your mind right now than eating.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "The fact that your entire village has almost certainly been completely wiped out by the Raiders, for one.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "You walk towards the column of smoke rising from the village. You pass the spot where you regained consciousness.", delayInSeconds: 3, specialAttribute: "last sentence")]
+            return [Sentence(text: "You turn around and climb back up the bank. There are more important things on your mind right now than eating.", delayInSeconds: 5, specialAttribute: "none"),
+            Sentence(text: "The fact that your entire village has almost certainly been completely wiped out by the Raiders, for one.", delayInSeconds: 5, specialAttribute: "none"),
+            Sentence(text: "You walk towards the column of smoke rising from the village. You pass the spot where you regained consciousness.", delayInSeconds: 5, specialAttribute: "last sentence")]
             
         case .Ch1RouteB:
-            return [Sentence(text: "You head across the grassy plaing towards the village. Fear envelops you in a web of darkness. Is it possible that anybody could be left alive?", delayInSeconds: 3, specialAttribute: "none"),
+            return [Sentence(text: "You head across the grassy plaing towards the village. Fear envelops you in a web of darkness. Is it possible that anybody could be left alive?", delayInSeconds: 7, specialAttribute: "none"),
             Sentence(text: "What about your family? Your friends?", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "Of course, you had heard the stories of the Raiders and what they did to other villages. But a part of you always believed the stories were exaggerated.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "Images of the carnage and destruction flash back in your mind. Children screaming. Homes burning.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "Of course, you had heard the stories of the Raiders and what they did to other villages. But a part of you always believed the stories were exaggerated.", delayInSeconds: 7, specialAttribute: "none"),
+            Sentence(text: "Images of the carnage and destruction flash back in your mind. Children screaming. Homes burning.", delayInSeconds: 4, specialAttribute: "none"),
             Sentence(text: "Raiders on horseback cutting down everyone and everything in their path.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You quicken your pace, eager to get back to your home.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "A moment later you freeze.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "There is a dark shape heading towards you through the grass.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "As it gets closer, you can see it’s a man on horseback, but you can’t make out what he looks like.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "Your first instinct is to hide. What if it’s another one of the Raiders?", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "Then another thought occurs to you. What if it’s somebody from the village? Maybe they are looking for survivors.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "As it gets closer, you can see it’s a man on horseback, but you can’t make out what he looks like.", delayInSeconds: 4, specialAttribute: "none"),
+            Sentence(text: "Your first instinct is to hide. What if it’s another one of the Raiders?", delayInSeconds: 4, specialAttribute: "none"),
+            Sentence(text: "Then another thought occurs to you. What if it’s somebody from the village? Maybe they are looking for survivors.", delayInSeconds: 5, specialAttribute: "none"),
             Sentence(text: "Maybe they’ve even sent out a search party for you.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You consider your options.", delayInSeconds: 3, specialAttribute: "last sentence")]
         
         case .Ch1RouteBA:
-            return [Sentence(text: "You wave your arms. You shout. ‘Hello!’ You call. ‘Over here! Help!’", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "The rider slows down. Then he looks towards you and changes course for your direction.", delayInSeconds: 3, specialAttribute: "none"),
+            return [Sentence(text: "You wave your arms. You shout. ‘Hello!’ You call. ‘Over here! Help!’", delayInSeconds: 4, specialAttribute: "none"),
+            Sentence(text: "The rider slows down. Then he looks towards you and changes course for your direction.", delayInSeconds: 4, specialAttribute: "none"),
             Sentence(text: "He is getting closer now.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "Closer…", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "Close enough for you to see the bloodstains on his clothing…", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "Close enough for you to see the curved blade of the Raiders hanging at his side…", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "His horse picks up speed as he bears down on you.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "If you run now, you might be able to get away. But can you outrun a man on horseback?", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "Maybe it would be better to try and plead with him. But then again, Raiders aren’t known for their empathy.", delayInSeconds: 3, specialAttribute: "last sentence")]
+            Sentence(text: "Maybe it would be better to try and plead with him. But then again, Raiders aren’t known for their empathy.", delayInSeconds: 4, specialAttribute: "last sentence")]
         
         case .Ch1RouteBAA:
             return [Sentence(text: "You hold your hands up in a gesture of submission.", delayInSeconds: 3, specialAttribute: "none"),
@@ -151,7 +151,7 @@ enum Story {
             Sentence(text: "You run as fast as you can.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "The roar of hooves follows you.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "What made you think you could outrun a Raider on horseback?", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "There is a thud in your back. The next moment, your chest bursts into a silver and red bloom.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "There is a thud in your back. The next moment, your chest bursts into a silver and red bloom.", delayInSeconds: 4, specialAttribute: "none"),
             Sentence(text: "The tip of a spear is sticking through your chest.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You sink to your knees in the grass.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "At least you don’t see the Raider descend on you with his curved silver blade.", delayInSeconds: 3, specialAttribute: "none"),
@@ -159,12 +159,12 @@ enum Story {
             Sentence(text: "GAME OVER", delayInSeconds: 3, specialAttribute: "last sentence")]
             
         case .Ch1RouteBB:
-            return [Sentence(text: "You drop to your knees and press yourself flat against the ground.", delayInSeconds: 3, specialAttribute: "none"),
+            return [Sentence(text: "You drop to your knees and press yourself flat against the ground.", delayInSeconds: 4, specialAttribute: "none"),
             Sentence(text: "The pounding hooves of the Raider’s horse grow louder as he approaches.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "He is right on top of you. He’ll see you for sure -", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "And then the horse and the Raider pass, and you hear them galloping away into the distance.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "You stay crouched for a good fifteen minutes more, just in case the Raider is bluffing, and you’re still being watched.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "Deep down, though, a part of you knows that that isn’t the Raiders’ style. If he knew you were there, you’d be dead already. No games.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "And then the horse and the Raider pass, and you hear them galloping away into the distance.", delayInSeconds: 5, specialAttribute: "none"),
+            Sentence(text: "You stay crouched for a good fifteen minutes more, just in case the Raider is bluffing, and you’re still being watched.", delayInSeconds: 6, specialAttribute: "none"),
+            Sentence(text: "Deep down, though, a part of you knows that that isn’t the Raiders’ style. If he knew you were there, you’d be dead already. No games.", delayInSeconds: 7, specialAttribute: "none"),
             Sentence(text: "Slowly you peer above the grassline. You appear to be alone.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You stand up and start heading towards the village.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You guess it will take about ten minutes for you to walk there.", delayInSeconds: 3, specialAttribute: "none"),
@@ -172,21 +172,21 @@ enum Story {
             Sentence(text: "Finally you arrive at your home.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "Or, at least, what’s left of it.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "The houses are in ruins. Roofs smoulder. Bodies lie in the streets.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "You spot the corpses of your brother and your father outside your house.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "You spot the corpses of your brother and your father outside your house.", delayInSeconds: 4, specialAttribute: "none"),
             Sentence(text: "You step over them.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "Your mother is inside.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "They died protecting here.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "But it was no use.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "They found her in here.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "Nobody escaped.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "In a daze you walk through the village, but even through your shock and your sadness and your pain you sense a plan forming.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "Already the anguish is fading away, dying, and it is like a part of your soul dying - not even a part, maybe more than a part, maybe the whole thing.", delayInSeconds: 3, specialAttribute: "none"),
+            Sentence(text: "In a daze you walk through the village, but even through your shock and your sadness and your pain you sense a plan forming.", delayInSeconds: 5, specialAttribute: "none"),
+            Sentence(text: "Already the anguish is fading away, dying, and it is like a part of your soul dying - not even a part, maybe more than a part, maybe the whole thing.", delayInSeconds: 7, specialAttribute: "none"),
             Sentence(text: "By nightfall you feel cold and hard, like steel.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You are strong. You are resolute.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "You have gathered what food and weapons you can.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "Alone and on foot, you set out to the south, to cross the Ragged Mountains.", delayInSeconds: 3, specialAttribute: "none"),
             Sentence(text: "Towards the home of the Raiders.", delayInSeconds: 3, specialAttribute: "none"),
-            Sentence(text: "It’s a long journey, and there’s no guarantee you will survive. But if you do, you will be the first ten-year-old ever to have done so.", delayInSeconds: 3, specialAttribute: "last sentence")]
+            Sentence(text: "It’s a long journey, and there’s no guarantee you will survive. But if you do, you will be the first ten-year-old ever to have done so.", delayInSeconds: 5, specialAttribute: "last sentence")]
         }
     }
     
