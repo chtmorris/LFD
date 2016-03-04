@@ -10,6 +10,7 @@ import Foundation
 
 class MyStory {
     var storyText:String?
+//    var state
     
     init(storyText: String) {
         self.storyText = storyText
