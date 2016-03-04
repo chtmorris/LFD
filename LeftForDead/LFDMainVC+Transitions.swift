@@ -8,89 +8,80 @@
 
 import UIKit
 
-extension LFDMainVC: StateMachineDelegateProtocol {
+extension LFDMainVC {
     
+    // ====================
+    // FEED STORY TO READER
+    // ====================
     
-    // =================
-    // STATE TRANSITIONS
-    // =================
-    
-    typealias StateType = StoryState
-    
-    func didTransitionFrom(from: StateType, to: StateType) {
-        switch (from, to) {
-            
-        // BEGINNING
-        case (.Beginning, .Ch1RouteA):
-            myStory.append("DECISION MADE:\n\(Story.Beginning.decisionA.text)")
-            self.setStoryButtonAndBackground(Story.Ch1RouteA)
-
-        case (.Beginning, .Ch1RouteB):
-            myStory.append("DECISION MADE:\n\(Story.Beginning.decisionB.text)")
-            setStoryButtonAndBackground(Story.Ch1RouteB)
+    func feedStorySentences(nextStorySection:Story) {
         
-        // CHAPTER 1 - ROUTE A
-        case (.Ch1RouteA, .Ch1RouteAA):
-            myStory.append("DECISION MADE:\n\(Story.Ch1RouteA.decisionA.text)")
-            setStoryButtonAndBackground(Story.Ch1RouteAA)
-        case (.Ch1RouteAA, .Ch1RouteAAA):
-            myStory.append("DECISION MADE:\n\(Story.Ch1RouteAA.decisionA.text)")
-            setStoryButtonAndBackground(Story.Ch1RouteAAA)
-        case (.Ch1RouteAA, .Ch1RouteAAB):
-            myStory.append("DECISION MADE:\n\(Story.Ch1RouteAA.decisionB.text)")
-            setStoryButtonAndBackground(Story.Ch1RouteAAB)
-        case (.Ch1RouteAAA, .Ch1RouteB):
-            setStoryButtonAndBackground(Story.Ch1RouteB)
-        case (.Ch1RouteAAB, .Ch1RouteB):
-            setStoryButtonAndBackground(Story.Ch1RouteB)
-        case (.Ch1RouteA, .Ch1RouteAB):
-            myStory.append("DECISION MADE:\n\(Story.Ch1RouteA.decisionB.text)")
-            setStoryButtonAndBackground(Story.Ch1RouteAB)
-        case (.Ch1RouteAB, .Ch1RouteB):
-            setStoryButtonAndBackground(Story.Ch1RouteB)
-        
-        // CHAPTER 1 - ROUTE B
-        case (.Ch1RouteB, .Ch1RouteBA):
-            myStory.append("DECISION MADE:\n\(Story.Ch1RouteB.decisionA.text)")
-            setStoryButtonAndBackground(Story.Ch1RouteBA)
-        case (.Ch1RouteBA, .Ch1RouteBAA):
-            myStory.append("DECISION MADE:\n\(Story.Ch1RouteBA.decisionA.text)")
-            setStoryButtonAndBackground(Story.Ch1RouteBAA)
-        case (.Ch1RouteBA, .Ch1RouteBAB):
-            myStory.append("DECISION MADE:\n\(Story.Ch1RouteBA.decisionB.text)")
-            setStoryButtonAndBackground(Story.Ch1RouteBAB)
-
-        case (.Ch1RouteB, .Ch1RouteBB):
-            myStory.append("DECISION MADE:\n\(Story.Ch1RouteB.decisionB.text)")
-            setStoryButtonAndBackground(Story.Ch1RouteBB)
-        
-        // CHAPTER 1 - ROUTE B - FINISH
-        case (.Ch1RouteBAA, .Beginning):
-            myStory = []
-            setStoryButtonAndBackground(Story.Beginning)
-        case (.Ch1RouteBAB, .Beginning):
-            myStory = []
-            setStoryButtonAndBackground(Story.Beginning)
-        case (.Ch1RouteBB, .Beginning):
-            myStory = []
-            setStoryButtonAndBackground(Story.Beginning)
-            
-        default:
-            break
+        if nextStorySection != Story.Beginning {
+            self.changeBackgroundColor(nextStorySection.backgroundColor, duration: 10, delay: 3)
         }
+        
+        var paragraph = Paragraph(sentences: nextStorySection.storyText)
+        
+        func showSentence() {
+            if let sentence = paragraph.nextSentence() {
+                
+                // ADD SENTENCE TO MYSTORY
+                self.myStory.append(sentence.text)
+                let indexPath = NSIndexPath(forItem: self.myStory.count - 1, inSection: 0)
+                self.collectionView.reloadData()
+                self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+                
+                // DEAL WITH LAST SENTENCE OPTIONS
+                if sentence.specialAttribute == "last sentence" {
+                    
+                    self.choiceAButtonLabel.text = sentence.decisionAText
+                    self.choiceBButtonLabel.text = sentence.decisionBText
+                    self.decisionAStoryState = sentence.decisionARoute!
+                    self.decisionBStoryState = sentence.decisionBRoute!
+                    
+                    
+                    Helper.delay(1.0, closure: { () -> () in
+                        if sentence.decisionAText == "NO CHOICE" {
+                            self.feedStorySentences(self.decisionAStoryState)
+                        } else {
+                            UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                                self.hideButtons(false)
+                                }, completion: nil)
+                        }
+                    })
+                    
+                }
+                
+                // DELAY BEFORE SHOWING NEXT SENTENCE
+                //                let delayInSeconds = 0.2
+                let delayInSeconds = sentence.delay
+                Helper.delay(delayInSeconds) {
+                    showSentence()
+                }
+            }
+        }
+        
+        showSentence()
+        
     }
     
     
     // =======
     // HELPERS
     // =======
-
-    func setStoryButtonAndBackground(storyRoute:Story) {
-        collectionView.reloadData()
-        Helper.delay(1.0, closure: { () -> () in
-            self.feedStorySentencesWithDelay(storyRoute)
-        })
-        self.changeBackgroundColor(storyRoute.backgroundColor, duration: 10, delay: 3)
+    
+    func hideButtons(hide:Bool){
+        if hide == true {
+            choiceAButtonLabel.alpha = 0
+            choiceBButtonLabel.alpha = 0
+        } else {
+            choiceAButtonLabel.alpha = 1
+            choiceBButtonLabel.alpha = 1
+        }
+        
+        choiceAButton.hidden = hide
+        choiceBButton.hidden = hide
     }
+
     
 }
