@@ -11,13 +11,42 @@ import Foundation
 struct Sentence {
     let text:String
     let delay:CFTimeInterval
-    let specialAttribute:String
+    let specialAttribute:String?
+    let decisionAText:String?
+    let decisionBText:String?
+    let decisionARoute:Story?
+    let decisionBRoute:Story?
+    
+    init(text:String, delayInSeconds delay:CFTimeInterval, specialAttribute:String, decisionAText:String, decisionBText:String, decisionARoute:Story, decisionBRoute:Story) {
+        self.text = text
+        self.delay = delay
+        self.specialAttribute = specialAttribute
+        self.decisionAText = decisionAText
+        self.decisionBText = decisionBText
+        self.decisionARoute = decisionARoute
+        self.decisionBRoute = decisionBRoute
+    }
     
     init(text:String, delayInSeconds delay:CFTimeInterval, specialAttribute:String) {
         self.text = text
         self.delay = delay
         self.specialAttribute = specialAttribute
+        self.decisionAText = nil
+        self.decisionBText = nil
+        self.decisionARoute = nil
+        self.decisionBRoute = nil
     }
+    
+    init(text:String, delayInSeconds delay:CFTimeInterval) {
+        self.text = text
+        self.delay = delay
+        self.specialAttribute = nil
+        self.decisionAText = nil
+        self.decisionBText = nil
+        self.decisionARoute = nil
+        self.decisionBRoute = nil
+    }
+
 }
 
 struct Paragraph {
@@ -32,5 +61,15 @@ struct Paragraph {
             return sentences.removeFirst()
         }
         return nil
+    }
+}
+
+struct DecisionButton {
+    let text:String
+    let storyRoute:Story
+    
+    init(text:String, storyRoute:Story) {
+        self.text = text
+        self.storyRoute = storyRoute
     }
 }
