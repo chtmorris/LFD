@@ -37,6 +37,10 @@ class LFDMainVC: UIViewController {
         case Beginning, Ch1RouteA, Ch1RouteAA, Ch1RouteAAA, Ch1RouteAAB, Ch1RouteAB, Ch1RouteB, Ch1RouteBA, Ch1RouteBAA, Ch1RouteBAB, Ch1RouteBB
     }
     
+    var currentStoryState:StoryState = .Beginning
+    var decisionAStoryState:StoryState = .Beginning
+    var decisionBStoryState:StoryState = .Beginning
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
@@ -91,6 +95,9 @@ class LFDMainVC: UIViewController {
     // ============
     
     @IBAction func choiceAtapped(sender: UIButton) {
+        
+        machine.state = currentStoryState
+        
         choiceASelected()
         hideButtons(true)
     }
@@ -177,10 +184,16 @@ class LFDMainVC: UIViewController {
                 self.collectionView.reloadData()
                 self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
                 
-                // DEAL WITH SPECIAL ATTRIBUTES
+                // DEAL WITH LAST SENTENCE OPTIONS
                 if sentence.specialAttribute == "last sentence" {
+                    
+                    self.choiceAButtonLabel.text = sentence.decisionAText
+                    self.choiceBButtonLabel.text = sentence.decisionBText
+//                    self.decisionAStoryState = sentence.decisionARoute
+                    
+                    
                     Helper.delay(1.0, closure: { () -> () in
-                        if nextStorySection.buttonATitle == "NO CHOICE" {
+                        if nextStorySection.decisionA.text == "NO CHOICE" {
                             self.choiceASelected()
                         } else {
                             UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
@@ -190,7 +203,9 @@ class LFDMainVC: UIViewController {
                     })
                 }
                 
-                let delayInSeconds = sentence.delay
+                // DELAY BEFORE SHOWING NEXT SENTENCE
+                let delayInSeconds = 0.2
+//                let delayInSeconds = sentence.delay
                 Helper.delay(delayInSeconds) {
                     showSentence()
                 } 
