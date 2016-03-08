@@ -1,16 +1,12 @@
 //
-//  StateMachine.swift
+//  TextNode.swift
 //  LeftForDead
 //
-//  Created by Charlie Morris on 22/02/2016.
+//  Created by Leo Tumwattana on 8/3/2016.
 //  Copyright © 2016 Mind Fund Studio. All rights reserved.
 //
 
-import Foundation
-
-typealias NodeId = String
-
-class Node {
+final class TextNode:Node {
     
     weak var graph:Graph?
     

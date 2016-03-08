@@ -1,24 +1,23 @@
 //
-//  LFDActions.swift
+//  Actions.swift
 //  LeftForDead
 //
 //  Created by Charlie Morris on 07/03/2016.
 //  Copyright © 2016 Mind Fund Studio. All rights reserved.
 //
 
-import Foundation
+import Foundation 
 
 protocol Action {
     var node:Node? { get set }
     func run()
 }
 
-
-class DelayAction:Action {
+final class DelayAction:Action {
     
     let delayInSeconds:CFTimeInterval
     let nextNodeId:String
-    weak var node:Node?
+    var node:Node?
     
     init(delayInSeconds delay:CFTimeInterval, nextNodeId id:NodeId) {
         delayInSeconds = delay
@@ -33,8 +32,7 @@ class DelayAction:Action {
     }
 }
 
-
-class ChoiceAction:Action {
+final class ChoiceAction:Action {
     
     var node:Node?
     let nextNodeId:NodeId
@@ -50,8 +48,7 @@ class ChoiceAction:Action {
     }
 }
 
-
-class DisplayChoicesAction:Action {
+final class DisplayChoicesAction:Action {
     
     var node:Node?
     let choices:[ChoiceAction]

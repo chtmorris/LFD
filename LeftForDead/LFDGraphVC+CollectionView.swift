@@ -19,9 +19,12 @@ extension LFDGraphViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(LFDNodeCell), forIndexPath: indexPath)
-        if let cell = cell as? LFDNodeCell {
-            cell.configure(graph.path[indexPath.row].text)
+        
+        let node = graph.path[indexPath.row]
+        if let node = node as? TextNode {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(LFDNodeCell),
+                forIndexPath: indexPath) as! LFDNodeCell
+            cell.configure(node.text)
             
             let totalStoryLength = graph.path.count - 1
             if (totalStoryLength - indexPath.row) > 3 {
@@ -42,7 +45,10 @@ extension LFDGraphViewController: UICollectionViewDataSource, UICollectionViewDe
                     }, completion: nil)
             }
             
+            return cell
         }
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(LFDNodeCell), forIndexPath: indexPath)
         return cell
     }
     

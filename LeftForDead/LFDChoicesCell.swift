@@ -21,8 +21,8 @@ final class LFDChoicesCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        //collectionView.delegate = self
+        //collectionView.dataSource = self
     }
     
     

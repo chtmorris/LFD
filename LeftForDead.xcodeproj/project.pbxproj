@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AB6F2651C8EE17800121DE6 /* TextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6F2641C8EE17800121DE6 /* TextNode.swift */; };
+		3AB6F2671C8EE1B300121DE6 /* ChoicesNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6F2661C8EE1B300121DE6 /* ChoicesNode.swift */; };
 		960490E30207BB24E9B23EF4 /* Pods_LeftForDead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED1B78219EE337393526B07 /* Pods_LeftForDead.framework */; };
-		EC0888DA1C8D6E1400298C1E /* LFDActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0888D91C8D6E1400298C1E /* LFDActions.swift */; };
-		EC0888DC1C8D6EDE00298C1E /* LFDGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0888DB1C8D6EDE00298C1E /* LFDGraph.swift */; };
+		EC0888DA1C8D6E1400298C1E /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0888D91C8D6E1400298C1E /* Actions.swift */; };
+		EC0888DC1C8D6EDE00298C1E /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0888DB1C8D6EDE00298C1E /* Graph.swift */; };
 		EC0888DE1C8D708000298C1E /* LeftForDeadGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0888DD1C8D708000298C1E /* LeftForDeadGraph.swift */; };
 		EC285B831C83FBFB00A1563E /* LFDGraphVC+BackgroundGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC285B821C83FBFB00A1563E /* LFDGraphVC+BackgroundGradients.swift */; };
 		EC285B851C842C7E00A1563E /* LFDGraphVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC285B841C842C7E00A1563E /* LFDGraphVC+CollectionView.swift */; };
@@ -21,7 +23,7 @@
 		ECACC88E1C7AB7CC0061D95D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECACC88C1C7AB7CC0061D95D /* LaunchScreen.storyboard */; };
 		ECACC8991C7AB7CD0061D95D /* LeftForDeadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8981C7AB7CD0061D95D /* LeftForDeadTests.swift */; };
 		ECACC8A41C7AB7CD0061D95D /* LeftForDeadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8A31C7AB7CD0061D95D /* LeftForDeadUITests.swift */; };
-		ECACC8B21C7ABC780061D95D /* LFDNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8B11C7ABC780061D95D /* LFDNode.swift */; };
+		ECACC8B21C7ABC780061D95D /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8B11C7ABC780061D95D /* Node.swift */; };
 		ECACC8BB1C7C0FB10061D95D /* LFDNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8BA1C7C0FB10061D95D /* LFDNodeCell.swift */; };
 		ECF515871C8EBC6200BEC8F0 /* LFDChoicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF515861C8EBC6200BEC8F0 /* LFDChoicesCell.swift */; };
 /* End PBXBuildFile section */
@@ -44,10 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AB6F2641C8EE17800121DE6 /* TextNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNode.swift; sourceTree = "<group>"; };
+		3AB6F2661C8EE1B300121DE6 /* ChoicesNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoicesNode.swift; sourceTree = "<group>"; };
 		6ED1B78219EE337393526B07 /* Pods_LeftForDead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeftForDead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E532F92D4B183048A75AC8DC /* Pods-LeftForDead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeftForDead.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeftForDead/Pods-LeftForDead.release.xcconfig"; sourceTree = "<group>"; };
-		EC0888D91C8D6E1400298C1E /* LFDActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDActions.swift; sourceTree = "<group>"; };
-		EC0888DB1C8D6EDE00298C1E /* LFDGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDGraph.swift; sourceTree = "<group>"; };
+		EC0888D91C8D6E1400298C1E /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		EC0888DB1C8D6EDE00298C1E /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		EC0888DD1C8D708000298C1E /* LeftForDeadGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftForDeadGraph.swift; sourceTree = "<group>"; };
 		EC285B821C83FBFB00A1563E /* LFDGraphVC+BackgroundGradients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LFDGraphVC+BackgroundGradients.swift"; sourceTree = "<group>"; };
 		EC285B841C842C7E00A1563E /* LFDGraphVC+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LFDGraphVC+CollectionView.swift"; sourceTree = "<group>"; };
@@ -65,7 +69,7 @@
 		ECACC89F1C7AB7CD0061D95D /* LeftForDeadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeftForDeadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECACC8A31C7AB7CD0061D95D /* LeftForDeadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftForDeadUITests.swift; sourceTree = "<group>"; };
 		ECACC8A51C7AB7CD0061D95D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECACC8B11C7ABC780061D95D /* LFDNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDNode.swift; sourceTree = "<group>"; };
+		ECACC8B11C7ABC780061D95D /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		ECACC8BA1C7C0FB10061D95D /* LFDNodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDNodeCell.swift; sourceTree = "<group>"; };
 		ECF515861C8EBC6200BEC8F0 /* LFDChoicesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFDChoicesCell.swift; sourceTree = "<group>"; };
 		F08492309764447193C2DCE8 /* Pods-LeftForDead.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeftForDead.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeftForDead/Pods-LeftForDead.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,7 +136,7 @@
 			children = (
 				ECACC8831C7AB7CC0061D95D /* AppDelegate.swift */,
 				EC9227911C7D7A9F00138769 /* Helpers.swift */,
-				ECACC8B31C7AED940061D95D /* StoryStructure */,
+				ECACC8B31C7AED940061D95D /* Models */,
 				ECACC8B71C7C06FB0061D95D /* Stories */,
 				ECACC8B41C7AEDAE0061D95D /* ViewControllers */,
 				ECACC8871C7AB7CC0061D95D /* Main.storyboard */,
@@ -161,14 +165,16 @@
 			path = LeftForDeadUITests;
 			sourceTree = "<group>";
 		};
-		ECACC8B31C7AED940061D95D /* StoryStructure */ = {
+		ECACC8B31C7AED940061D95D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ECACC8B11C7ABC780061D95D /* LFDNode.swift */,
-				EC0888D91C8D6E1400298C1E /* LFDActions.swift */,
-				EC0888DB1C8D6EDE00298C1E /* LFDGraph.swift */,
+				ECACC8B11C7ABC780061D95D /* Node.swift */,
+				3AB6F2641C8EE17800121DE6 /* TextNode.swift */,
+				3AB6F2661C8EE1B300121DE6 /* ChoicesNode.swift */,
+				EC0888D91C8D6E1400298C1E /* Actions.swift */,
+				EC0888DB1C8D6EDE00298C1E /* Graph.swift */,
 			);
-			name = StoryStructure;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		ECACC8B41C7AEDAE0061D95D /* ViewControllers */ = {
@@ -391,16 +397,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB6F2651C8EE17800121DE6 /* TextNode.swift in Sources */,
 				ECACC8861C7AB7CC0061D95D /* LFDGraphViewController.swift in Sources */,
 				ECACC8BB1C7C0FB10061D95D /* LFDNodeCell.swift in Sources */,
 				EC9227921C7D7A9F00138769 /* Helpers.swift in Sources */,
-				ECACC8B21C7ABC780061D95D /* LFDNode.swift in Sources */,
+				ECACC8B21C7ABC780061D95D /* Node.swift in Sources */,
 				EC285B831C83FBFB00A1563E /* LFDGraphVC+BackgroundGradients.swift in Sources */,
-				EC0888DC1C8D6EDE00298C1E /* LFDGraph.swift in Sources */,
+				EC0888DC1C8D6EDE00298C1E /* Graph.swift in Sources */,
 				EC285B851C842C7E00A1563E /* LFDGraphVC+CollectionView.swift in Sources */,
 				ECACC8841C7AB7CC0061D95D /* AppDelegate.swift in Sources */,
+				3AB6F2671C8EE1B300121DE6 /* ChoicesNode.swift in Sources */,
 				ECF515871C8EBC6200BEC8F0 /* LFDChoicesCell.swift in Sources */,
-				EC0888DA1C8D6E1400298C1E /* LFDActions.swift in Sources */,
+				EC0888DA1C8D6E1400298C1E /* Actions.swift in Sources */,
 				EC0888DE1C8D708000298C1E /* LeftForDeadGraph.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
