@@ -9,13 +9,13 @@
 import UIKit
 import Hue
 
-protocol GraphViewController {
+protocol GraphPresenter {
     var graph:Graph { get }
-    func showNode(nodeId:NodeId)
     func showChoices(choices: [ChoiceAction])
+    func displayNode(node:Node)
 }
 
-final class LFDGraphViewController: UIViewController, GraphViewController {
+final class LFDGraphViewController: UIViewController, GraphPresenter {
     
     // =========
     // VARIABLES
@@ -32,7 +32,7 @@ final class LFDGraphViewController: UIViewController, GraphViewController {
 //    let gradient = [UIColor.clearColor(), UIColor.blackColor(), UIColor.blackColor()].gradient()
     
     lazy var graph:Graph = {
-        LeftForDeadStory(viewController: self)
+        LeftForDeadGraph(presenter: self)
     }()
     let startingNode: NodeId = "1.001"
     
@@ -54,21 +54,19 @@ final class LFDGraphViewController: UIViewController, GraphViewController {
 //        addGradientBackground()
 //        self.view.backgroundColor = UIColor.hex("#140074")
 //        changeBackgroundColor("#0FC300", duration: 15, delay: 35)
-        showNode(startingNode)
+        //showNode(startingNode)
         
+        graph.showInitialNode()
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
-    func showNode(nodeId:NodeId) {
-        guard let node = graph.moveToNode(nodeId) else { return }
-        
+    func displayNode(node:Node) {
         let indexPath = NSIndexPath(forItem: graph.path.count - 1, inSection: 0)
         self.collectionView.reloadData()
         self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
-        
         node.runAction()
     }
     

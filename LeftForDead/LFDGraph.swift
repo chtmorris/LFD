@@ -10,7 +10,7 @@ import Foundation
 
 class Graph {
     
-    var viewController:GraphViewController?
+    var presenter:GraphPresenter?
     
     var pathCount:Int {
         return path.count
@@ -28,8 +28,12 @@ class Graph {
     
     private var _nodes = [NodeId: Node]()
     
-    init(viewController:GraphViewController) {
-        self.viewController = viewController
+    init(presenter:GraphPresenter) {
+        self.presenter = presenter
+    }
+    
+    func initialNodeId() -> String {
+        return "1.0"
     }
     
     func addNode(node:Node) {
@@ -37,11 +41,17 @@ class Graph {
         _nodes[node.id] = node
     }
     
-    func moveToNode(nodeId:NodeId) -> Node? {
-        if let node = nodes[nodeId] {
+    func showNode(nodeId:NodeId) {
+        if let presenter = presenter, node = nodes[nodeId] {
             _path.append(node)
-            return node
+            presenter.displayNode(node)
         }
-        return nil
+    }
+    
+    func showInitialNode() {
+        if let presenter = presenter, node = nodes[initialNodeId()] {
+            _path.append(node)
+            presenter.displayNode(node)
+        }
     }
 }

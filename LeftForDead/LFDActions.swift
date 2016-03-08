@@ -28,7 +28,7 @@ class DelayAction:Action {
     func run() {
         Helper.delay(delayInSeconds) {
             print(self.node)
-            self.node?.graph?.viewController?.showNode(self.nextNodeId)
+            self.node?.graph?.showNode(self.nextNodeId)
         }
     }
 }
@@ -46,7 +46,7 @@ class ChoiceAction:Action {
     }
     
     func run() {
-        self.node?.graph?.viewController?.showNode(self.nextNodeId)
+        self.node?.graph?.showNode(self.nextNodeId)
     }
 }
 
@@ -61,7 +61,7 @@ class DisplayChoicesAction:Action {
     }
     
     func run() {
-        self.node?.graph?.viewController?.showChoices(choices)
+        self.node?.graph?.presenter?.showChoices(choices)
     }
     
 }
