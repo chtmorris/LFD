@@ -9,30 +9,34 @@
 import Foundation
 
 protocol Action {
-    func runOnGraph(graph:Graph)
+    var node:Node? { get set }
+    func run()
 }
 
 
-struct DelayAction:Action {
+class DelayAction:Action {
     
     let delayInSeconds:CFTimeInterval
     let nextNodeId:String
+    weak var node:Node?
     
     init(delayInSeconds delay:CFTimeInterval, nextNodeId id:NodeId) {
         delayInSeconds = delay
         nextNodeId = id
     }
     
-    func runOnGraph(graph:Graph) {
-        Helper.delay(delayInSeconds, closure: {
-            graph.showNode(self.nextNodeId)
-        })
+    func run() {
+        Helper.delay(delayInSeconds) {
+            print(self.node)
+            self.node?.graph?.viewController?.showNode(self.nextNodeId)
+        }
     }
 }
 
 
-struct ChoiceAction:Action {
+class ChoiceAction:Action {
     
+    var node:Node?
     let nextNodeId:NodeId
     let text:String
     
@@ -41,35 +45,23 @@ struct ChoiceAction:Action {
         self.text = text
     }
     
-    func runOnGraph(graph: Graph) {
-        graph.showNode(self.nextNodeId)
+    func run() {
+        self.node?.graph?.viewController?.showNode(self.nextNodeId)
     }
 }
 
 
-struct DisplayChoicesAction:Action {
+class DisplayChoicesAction:Action {
     
-    func showChoices(choices:[ChoiceAction]) {
-        print("==========")
-        for (i, choice) in choices.enumerate() {
-            print("\(i): \(choice.text)")
-        }
-        print("==========")
-    }
-    
+    var node:Node?
     let choices:[ChoiceAction]
     
     init(choices:[ChoiceAction]) {
         self.choices = choices
     }
     
-    func runOnGraph(graph: Graph) {
-        showChoices(choices)
-        
-        Helper.delay(3, closure: {
-            // Simulate user input
-            print("> User Chooses: 1")
-            self.choices.last?.runOnGraph(graph)
-        })
+    func run() {
+        self.node?.graph?.viewController?.showChoices(choices)
     }
+    
 }

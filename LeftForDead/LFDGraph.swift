@@ -10,43 +10,38 @@ import Foundation
 
 class Graph {
     
-    var history = [NodeId]() {
-        didSet {
-            print("History: \(history)")
-        }
+    var viewController:GraphViewController?
+    
+    var pathCount:Int {
+        return path.count
     }
+    
+    var path:[Node] {
+        return _path
+    }
+    
+    private var _path = [Node]()
     
     var nodes:[NodeId: Node] {
         return _nodes
     }
     
-    var _nodes = [NodeId: Node]()
+    private var _nodes = [NodeId: Node]()
+    
+    init(viewController:GraphViewController) {
+        self.viewController = viewController
+    }
     
     func addNode(node:Node) {
         node.graph = self
         _nodes[node.id] = node
     }
     
-    func showNode(nodeId:NodeId) -> String {
-        guard let node = nodes[nodeId] else { return "no node found"}
-        history.append(nodeId)
-        print(node.text)
-        node.runAction()
-        
-        return node.text
-    }
-    
-    func showNodes(nodeIds:[NodeId]) {
-        
-        history = nodeIds
-        
-        for (i, nodeId) in nodeIds.enumerate() {
-            if let node = nodes[nodeId] {
-                if i == nodeIds.count - 1 {
-                    node.runAction()
-                }
-            }
-            
+    func moveToNode(nodeId:NodeId) -> Node? {
+        if let node = nodes[nodeId] {
+            _path.append(node)
+            return node
         }
+        return nil
     }
 }

@@ -12,22 +12,20 @@ typealias NodeId = String
 
 class Node {
     
-    typealias NodeId = String
-
     weak var graph:Graph?
     
     let id:NodeId
     let text:String
     let action:Action
     
-    init(id:NodeId, text:String, action:Action) {
+    init(id:NodeId, text:String, var action:Action) {
         self.id = id
         self.text = text
         self.action = action
+        action.node = self
     }
     
     func runAction() {
-        guard let graph = graph else { return }
-        action.runOnGraph(graph)
+        action.run()
     }
 }
