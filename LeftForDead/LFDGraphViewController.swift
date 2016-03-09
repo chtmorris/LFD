@@ -34,7 +34,6 @@ final class LFDGraphViewController: UIViewController, GraphPresenter {
     lazy var graph:Graph = {
         LeftForDeadGraph(presenter: self)
     }()
-    let startingNode: NodeId = "1.001"
     
     // ============
     // VC LIFECYCLE
@@ -54,7 +53,6 @@ final class LFDGraphViewController: UIViewController, GraphPresenter {
 //        addGradientBackground()
 //        self.view.backgroundColor = UIColor.hex("#140074")
 //        changeBackgroundColor("#0FC300", duration: 15, delay: 35)
-        //showNode(startingNode)
         
         graph.showInitialNode()
     }
