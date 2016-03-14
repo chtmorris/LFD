@@ -35,6 +35,9 @@ final class LFDGraphViewController: UIViewController, GraphPresenter {
         LeftForDeadGraph(presenter: self)
     }()
     
+    var choiceANextNode: NodeId = ""
+    var choiceBNextNode: NodeId = ""
+    
     // ============
     // VC LIFECYCLE
     // ============
@@ -72,6 +75,8 @@ final class LFDGraphViewController: UIViewController, GraphPresenter {
         if choices.count == 2 {
             self.choiceAButtonLabel.text = choices[0].text
             self.choiceBButtonLabel.text = choices[1].text
+            self.choiceANextNode = choices[0].nextNodeId
+            self.choiceBNextNode = choices[1].nextNodeId
             hideButtons(false)
         } else {
             print("More or less than 2 choices returned")
@@ -85,13 +90,13 @@ final class LFDGraphViewController: UIViewController, GraphPresenter {
     
     @IBAction func choiceAtapped(sender: UIButton) {
         // TODO - set story.history to empty [] if restarting story
-        
+        graph.showNode(choiceANextNode)
         hideButtons(true)
     }
     
     @IBAction func choiceBtapped(sender: UIButton) {
         // TODO - set story.history to empty [] if restarting story
-
+        graph.showNode(choiceBNextNode)
         hideButtons(true)
     }
     
