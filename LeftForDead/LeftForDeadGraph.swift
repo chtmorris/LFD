@@ -18,13 +18,13 @@ final class LeftForDeadGraph: Graph {
         super.init(presenter: presenter)
         
         addNode(TextNode(id: "1.001", text: "You are at the bottom of an ocean of darkness.",
-            action: DelayAction(delayInSeconds: 3, nextNodeId: "1.002")))
+            action: DelayAction(delayInSeconds: 1, nextNodeId: "1.002")))
         
         addNode(TextNode(id: "1.002", text: "Down here in the dark, you see the flashes again. You can smell the smoke.",
-            action: DelayAction(delayInSeconds: 4, nextNodeId: "1.003")))
+            action: DelayAction(delayInSeconds: 1, nextNodeId: "1.003")))
         
         addNode(TextNode(id: "1.003", text: "You can hear the screams.",
-            action: DelayAction(delayInSeconds: 3, nextNodeId: "1.2")))
+            action: DelayAction(delayInSeconds: 1, nextNodeId: "1.2")))
 
         addNode(TextNode(id: "1.2", text: "Perhaps, though, you ought to head back to the village.",
             action: DisplayChoicesAction(choices: [
@@ -39,25 +39,5 @@ final class LeftForDeadGraph: Graph {
             action: DelayAction(delayInSeconds: 1, nextNodeId: "1.002")))
 
     }
-    
-//    init(viewController vc:GraphViewController) {
-//        self.init(viewController: vc)
-//    }
-//    
-//    
-//    override init() {
-//        super.init()
-//        addNode(Node(id: "1.001", text: "You are at the bottom of an ocean of darkness.", action: DelayAction(delayInSeconds: 3, nextNodeId: "1.002")))
-//        addNode(Node(id: "1.002", text: "Down here in the dark, you see the flashes again. You can smell the smoke.", action: DelayAction(delayInSeconds: 4, nextNodeId: "1.003")))
-//        addNode(Node(id: "1.003", text: "You can hear the screams.", action: DelayAction(delayInSeconds: 3, nextNodeId: "1.2")))
-//        
-//        addNode(Node(id: "1.2", text: "Perhaps, though, you ought to head back to the village.", action: DisplayChoicesAction(choices: [
-//            ChoiceAction(text: "Head for the river", nextNodeId: "2.0"),
-//            ChoiceAction(text: "Go back to the village", nextNodeId: "3.0")
-//            ])))
-//        
-//        addNode(Node(id: "2.0", text: "Great. Let head to the river", action: DelayAction(delayInSeconds: 1, nextNodeId: "1.001")))
-//        addNode(Node(id: "3.0", text: "Fine. Let's go to the village then", action: DelayAction(delayInSeconds: 1, nextNodeId: "1.002")))
-//    }
     
 }
