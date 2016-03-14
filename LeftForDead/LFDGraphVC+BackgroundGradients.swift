@@ -8,19 +8,19 @@
 
 import UIKit
 
-extension LFDMainVC {
+extension LFDGraphViewController {
     
     
     // ==============================
     // SETTING UP GRADIENT BACKGROUND
     // ==============================
     
-    func addGradientBackground() {
-        gradient.bounds = self.view.bounds
-        gradient.frame = self.gradientView.bounds
-        
-        self.gradientView.layer.addSublayer(self.gradient)
-    }
+//    func addGradientBackground() {
+//        gradient.bounds = self.view.bounds
+//        gradient.frame = self.gradientView.bounds
+//        
+//        self.gradientView.layer.addSublayer(self.gradient)
+//    }
     
     func changeBackgroundColor(hexColor:String, duration: NSTimeInterval, delay:NSTimeInterval) {
         UIView.animateWithDuration(duration, delay: delay, options: .CurveLinear, animations: {

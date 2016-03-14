@@ -8,11 +8,11 @@
 
 import UIKit
 
-class LFDStoryTextCell: UICollectionViewCell {
+final class LFDNodeCell: UICollectionViewCell {
     
-    @IBOutlet weak var storyTextLabel: UILabel!
+    @IBOutlet weak var label: UILabel!
     
-    func configure(storyText: String) {
-        storyTextLabel.text = storyText
+    func configure(text: String) {
+        label.text = text
     }
 }
